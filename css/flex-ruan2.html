@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex布局--阮一峰日志2</title>
+	<style>
+		/* css reset */
+		* {
+			box-sizing: border-box;
+		}
+		html,body {
+			height: 100%;     /* 设置html高度为100%，就可以让body里的div块居中显示 */
+		}
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-flow: column nowrap;
+			font-family: 'Open Sans', sans-serif;
+			min-height: 100vh;
+		}
+
+		/* 定制布局块--上部--固定宽高显示 */
+		.grid{
+			display: flex;
+			flex-flow: column nowrap;
+			flex: 1 0 50%;
+			width: 100%;
+			/*background-color: #6495ED;*/
+			margin-bottom: 10px;
+		}
+		.column	{
+			display: flex;
+			flex: 1;
+			margin: 10px;
+			padding: 0 10px;
+		}
+		.two,.three, .four, .five {
+			display: flex;
+			flex: 1;
+			flex-flow: column wrap;
+			justify-content: center;
+			align-items: center;
+			background-color: #E7E7E7;
+			margin: 0 5px;
+		}
+		/* 定制布局块--下部--圣杯式布局 */
+		.holy {
+			display: flex;
+			flex-direction: column;
+			flex: 1 0 50%;
+			width: 100%;
+		}
+		header, footer {
+			flex: 1 0 20%;
+			/*height: 0;*/
+			background-color: #e4b9b9;
+		}
+		footer {
+			position: relative;
+		}
+		footer > p {
+			margin:0;
+			padding: 0;
+		}
+		footer > .explanation {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		.content {
+			display: flex;
+			flex: 1 0 60%;
+			background-color: white;
+		}
+		.content > .tabs, .notes {
+			flex: 0 0 10%;
+			background-color: #77BBDD;
+		}
+		.content > .tabs {
+			order: -1;
+		}
+		.content > .main {
+			flex: 0 0 80%;
+			/*background-color: #6495ED;*/
+		}
+		/* 定制布局块--圣杯式布局--中部main--百分比固定布局 */
+		.main {
+			display: flex;
+			flex-direction: column;
+		}
+		.holy-column {
+			display: flex;
+		}
+		.holy-column > * {
+			background-color: #E7E7E7;
+			margin: 5px 5px;
+			height: 50px;
+		}
+		.holy-column > .second {
+			flex: 0 0 50%;
+		}
+		.holy-column > .autos {
+			flex: 1;
+		}
+		.holy-column > .third {
+			flex: 0 0 33.33%;
+		}
+		.holy-column > .fourth {
+			flex: 0 0 25%;
+		}
+	</style>
+</head>
+<body>
+	<div class="grid">
+		<div class="column">
+			<div class="two">1/2</div>
+			<div class="two">1/2</div>
+		</div>
+		<div class="column">
+			<div class="three">1/3</div>
+			<div class="three">1/3</div>
+			<div class="three">1/3</div>
+		</div>
+		<div class="column">
+			<div class="four">1/4</div>
+			<div class="four">1/4</div>
+			<div class="four">1/4</div>
+		</div>
+		<div class="column">
+			<div class="five">利用flex: 1;平分一行</div>
+			<div class="five">
+				<p>注意：要用width:100%;确定容器大小</p>
+				<p>注意：要用width:100%;确定容器大小</p>
+			</div>
+		</div>
+	</div>
+	<div class="holy">
+		<header>顶部--圣杯布局</header>
+		<div class="content">
+			<div class="main">
+				<div class="holy-column">
+					<div class="second">1/2</div>
+					<div class="autos">auto</div>
+					<div class="autos">auto</div>
+				</div>
+				<div class="holy-column">
+					<div class="autos">auto</div>
+					<div class="third">1/3</div>
+				</div>
+				<div class="holy-column">
+					<div class="fourth">1/4</div>
+					<div class="autos">auto</div>
+					<div class="third">1/3</div>
+				</div>
+			</div>
+			<div class="tabs">
+				左边导航
+			</div>
+			<div class="notes">
+				右侧注释
+			</div>
+		</div>
+		<footer>
+			<div class="explanation">
+				<p>尾部</p>
+				<p>加上P标签后，高度增高,将footer设置为position：relative</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

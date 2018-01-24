@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画一个自适应的正方形</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+		html,body {
+			width: 100vw;
+			/*height: 100vh;*/
+		}
+		.box > * {
+			margin: 10px;
+		}
+		h2 {
+			text-align:center;
+			margin: 15px 0;
+		}
+		p {
+			margin: 5px;
+		}
+		.rec1 {
+			position:relative;
+			float: left;
+			/*width: 200px;*/     /* 备注：此类实现方法，width只能用百分比表示，用px像素表示无法正确显示 */
+			width: 40%;
+			height: 40vw;
+			background-color: #5bc0de;
+			/*margin:0 auto;*/    /*实现div块水平居中*/
+		}
+		.rec2 {
+			position:relative;
+			float: left;
+			width: 40%;
+			padding-bottom: 40%;
+			height: 0;
+			background-color: #e4b9b9;
+		}
+		.rec3 {
+			width: 40%;
+			/*max-width: 500px;*/
+			background-color: #9d9d9d;
+			position:relative;
+			float: left;
+		}
+		.rec3:after {
+			display: block;
+			content: '';
+			padding-top: 100%;
+		}
+		.rec4 {
+			position:relative;
+			float: left;
+			width: 40%;
+			/*max-width: 500px;*/
+			overflow: hidden;
+			background-color: #67b168;
+		}
+		.rec4:after {
+			content: '';
+			display: block;
+			margin-top: 100%;
+		}
+		.rec3 > .explanation {
+			position: absolute;
+			left: 0;
+			top: 20px;
+		}
+		.rec4 > .explanation {
+			position: absolute;
+			left: 0;
+			top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="rec1">
+			<h2>CSS3 vw单位</h2>
+			<p>百分比和vh\vw值还是存在差距的，vw始终是文档宽度，百分比是相对于父元素的</p>
+			<p>width为百分比，height为对应的高度vw</p>
+			<p>记得要设置body : width:100vw; height:100vh;</p>
+		</div>
+		<div class="rec2">
+			<h2>CSS3 padding-bottom</h2>
+			<p>magin\padding的数值是相对于父元素的宽度计算的</p>
+			<p>确定父元素宽度，利用padding-bottom撑开容器，但此时添加内容，会造成高度增加</p>
+			<p>添加一行： height: 0;</p>
+			<p>该方法中，不能用padding-top,否则添加内容后，即使添加了height:0; 高度依然会在增加。</p>
+			<p>缺点：会导致在元素上设置的max-width属性失效（max-height不收缩）</p>
+		</div>
+	</div>
+	<div class="box">
+		<div class="rec3">
+			<div class="explanation">
+				<h2>:after 伪元素设定 padding-top</h2>
+				<p> 上一个方法中，max-width 失效是因为max-height无效</p>
+				<p> 利用 子元素 中的padding-top撑开 content部分元素的高度，使max-height生效</p>
+			</div>
+		</div>
+		<div class="rec4">
+			<div class="explanation">
+				<h2>:after 伪元素设定 margin-top</h2>
+				<p> 同padding-top，但是利用子元素中的margin-top撑开 content部分元素的高度，使max-height生效</p>
+				<p> margin 会造成垂直方向的外边距合并，所以需要在父元素上触发BFC，设置overflow:hidden;</p>
+				<h4> margin-top\padding-top添加内容时，会造成高度增加</h4>
+				<p> 解决办法：正方形块 position:relative,内容块设置为position: absolute</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
