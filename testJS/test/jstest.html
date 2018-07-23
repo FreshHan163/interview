@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实验楼--Javascript基础</title>
+		<style type="text/css">
+			.showdom {
+				width: 500px;
+				height: 300px;
+				border: 1px solid pink;
+				margin: 10px 0 10px 10px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p id="p1">这是一个innerHTML文件流。</p>
+		</div>
+		<div>
+			<p id="car">车辆展示</p>
+			<input type="button" value="开车" id="drive" onclick="cardrive()">
+			<input type="button" value="停车" id="stopcar" onclick="carstop()">
+			<input type="button" value="炫富" id="showcar" onclick="carshow()">
+		</div>
+		<div class="showdom" id="showdom">
+			<p id="doc">DOM</p>
+			<input type="button" value="创建父节点" id="newdom" onclick="createdom()">
+			<input type="button" value="创建子节点" id="newchilddom" onclick="createchilddom()">
+			<input type="button" value="删除子节点" id="deletedom" onclick="deletedom()">
+			<input type="button" value="改变背景颜色" id="changecolor" onclick="changecolor()">
+		</div>
+		<div onmouseover="this.innerHTML='onmouseover'">
+			<p>验证输入，实现JS事件</p>
+			<input type="text" onblur="popbox(this)" >
+		</div>
+		<script type="text/javascript">
+
+			var i = 0;
+			while(i < 7) {
+				document.write("The number is " + i +  "</br>");
+				// document.write("ddd");
+				// alert(i);
+				i++;
+			}
+			// document.html("ddd");
+			var tdiv = document.getElementsByTagName("div");
+			var t = document.getElementById("p1");
+			console.log(tdiv[0].innerHTML);
+			// t.innerHTML="1";
+
+			// 实现JS事件功能
+			function popbox(obj) {
+				// console.log(obj.innerHTML);
+				if( obj.innerHTML == "" || obj.innerHTML == null)	{
+					alert("input cannot be empty!");
+				}
+			}
+
+			// 创建对象
+			function car(brand,color,price) {
+				this.brand = brand;
+				this.color = color;
+				this.price = price;
+
+				this.drive = function() {
+					alert("老司机开车了，上车！");
+				}
+
+				this.stopcar = function() {
+					alert("停车！我要下车！");
+				}
+
+				this.showcar = function() {
+					alert("这辆车是" + color + "的" + brand + "，我花了" + price + "买来的！");
+				}
+			}
+			var car1 = new car('奥迪','蓝色',12000);
+			console.log(car1);
+			var d1 = document.getElementById("showcar");
+			function cardrive() {
+				car1.drive();
+			}
+			function carstop() {
+				car1.stopcar();
+			}
+			function carshow() {
+				car1.showcar();
+			}
+		 	// d1.innerHTML = "</br><p>ddd</p>";
+
+		 	// 实现dom节点
+		 	function createdom() {
+		 		// 创建节点
+		 		var div1 = document.createElement("div");
+		 		div1.setAttribute("id","newid");
+		 		div1.style.height = "100px";
+		 		div1.style.width = "300px";
+		 		div1.style.border = "1px solid red";
+
+		 		// 为节点添加内容
+		 		div1.innerHTML = "这是一个新建的div";
+
+		 		// 追加该节点
+		 		document.getElementsByTagName("body")[0].appendChild(div1);
+		 		// document.getElementById("newdom").parentNode.appendChild(div1);
+
+		 	}
+		 	function createchilddom() {
+		 		// 创建节点
+		 		var div1 = document.createElement("div");
+		 		div1.setAttribute("id","newid");
+		 		div1.style.height = "100px";
+		 		div1.style.width = "300px";
+		 		div1.style.border = "1px solid red";
+
+		 		// 为节点添加内容
+		 		div1.innerHTML = "这是一个新建的div";
+
+		 		// 追加该节点
+		 		// document.getElementsByTagName("body")[0].appendChild(div1);
+		 		document.getElementById("newdom").parentNode.appendChild(div1);
+
+		 	}
+		 	function deletedom() {
+		 		//获取要删除的节点d
+		 		var d = document.getElementById("newid");
+
+		 		//获取要删除节点的父节点
+		 		var t = document.getElementById("showdom").getAttribute("class");
+		 		if(t == "showdom") {
+		 			// alert(t);
+		 			document.getElementById("showdom").removeChild(d);
+		 		}
+		 	}
+
+		 	function changecolor() {
+		 		var d = document.getElementById("showdom");
+		 		if( d.style.backgroundColor == "") {
+		 			d.style.backgroundColor = "red";
+		 		} else {
+		 			d.style.backgroundColor = "";
+		 		}
+		 	}
+
+		 	// 把字符串转换为对象
+		 	var jss = "{colkey: 'col'}";
+		 	var jsstring = "{ colkey: jss, colsinfo: '{dd: 'ddd'}' }";
+		 	var jst = "['TableTennis','Basketball','Swimming','Athletics','Football']";
+		 	console.log(typeof jst);
+        	var t1 = eval('('+jss+')');
+        	var tt = eval('('+jsstring+')');
+        	console.log(typeof tt);
+        	console.log(tt);
+
+/*        	var tt = "{option{title[0]{text}}}";
+        	var t = tt.replace('"');
+
+        	console.log(typeof t);*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>蓝色水平二级导航菜单 by www.mycodes.net</title>
+<link rel="stylesheet" type="text/css" href="header.css" />
+<script language="javascript" type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script language="javascript" type="text/javascript">
+$(document).ready(function(){
+	$(".mainNav a").mouseover(function(){
+		$(".mainNav a").attr("class","");
+		$("#"+this.id).attr("class","actived");
+		var currentMenuNo = parseInt(this.id.substring(1));
+		$(".secondNav div").each(function(){
+			$(this).hide();
+			$("#subNav"+currentMenuNo).show();
+		});
+	});
+});
+</script>
+</head>
+<body>
+<div class="header">
+	<div class="padder">
+		<div class="nav">
+			<div class="navLaftBg">
+				<div class="navRightBg">
+					<div class="mainNav">
+						<a href="http://www.mycodes.net/" id="n1" class="actived">首页</a>
+						<a href="http://www.mycodes.net/" id="n2">ASP源码</a>
+						<a href="http://www.mycodes.net/" id="n3">PHP源码</a>
+						<a href="http://www.mycodes.net/" id="n4">.NET源码</a>
+						<a href="http://www.mycodes.net/" id="n5">HTML源码</a>
+						<a href="http://www.mycodes.net/" id="n6">工具软件</a>
+						<a href="http://www.mycodes.net/" id="n7">源码学院</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="secondNav">
+			<div id="subNav2" class="subNav2">
+				<a href="http://www.mycodes.net/" class="actived">社区论坛</a>
+				<a href="http://www.mycodes.net/">全站CMS</a>
+				<a href="http://www.mycodes.net/">企业网站</a>
+			</div>
+			<div id="subNav3" class="subNav3">
+				<a href="http://www.mycodes.net/" class="actived">社区论坛</a>
+				<a href="http://www.mycodes.net/">全站CMS</a>
+				<a href="http://www.mycodes.net/">企业网站</a>
+			</div>
+			<div id="subNav4" class="subNav4">
+				<a href="http://www.mycodes.net/" class="actived">社区论坛</a>
+				<a href="http://www.mycodes.net/">全站CMS</a>
+				<a href="http://www.mycodes.net/">企业网站</a>
+			</div>
+			<div id="subNav5" class="subNav5">
+				<a href="http://www.mycodes.net/" class="actived">社区论坛</a>
+				<a href="http://www.mycodes.net/">全站CMS</a>
+				<a href="http://www.mycodes.net/">企业网站</a>
+			</div>
+			<div id="subNav6" class="subNav6">
+				<a href="http://www.mycodes.net/" class="actived">社区论坛</a>
+				<a href="http://www.mycodes.net/">全站CMS</a>
+				<a href="http://www.mycodes.net/">企业网站</a>
+			</div>
+			<div id="subNav7" class="subNav7">
+				<a href="http://www.mycodes.net/" class="actived">社区论坛</a>
+				<a href="http://www.mycodes.net/">全站CMS</a>
+				<a href="http://www.mycodes.net/">企业网站</a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

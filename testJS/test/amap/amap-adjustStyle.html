@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>广州出发城市</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+        }
+
+        #outer-box {
+            height: 100%;
+            padding-right: 280px;
+        }
+
+        #container {
+            height: 100%;
+            width: 90%;
+        }
+
+        #panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 390px;
+            z-index: 999;
+            /*height: calc(100% - 5px);*/
+            height: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: #0D1A29;
+        }
+
+        #my-gui-container h3 {
+            margin: 10px 0 3px 0;
+        }
+
+        #exportConfigPanel pre {
+            margin: 0;
+        }
+        /* 列表展示面板 */
+        .sort-list {
+            position: absolute;
+            width: 100%;
+            margin: 25px 0;
+            height: 500px;
+            background-color: #1a1a1a;
+        }
+        /* 按钮面板 */
+        .choice-btn {
+            position: relative;
+            /*width: 90%;*/
+            height: 28px;
+            margin: 10px 15px;
+            background-color: #008CFF;
+            border: 0;
+            padding: 5px 0;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+        /* 面板标题 */
+        .choice-btn p{
+
+        }
+        /* 面板列表 */
+        .list-panel {
+            position: relative;
+            /*width: 90%;*/
+            height: 450px;
+            margin: 5px 15px;
+            border: 0;
+            padding: 5px 0;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+        /* 面板列表行 */
+        .list-row {
+            height: 28px;
+            padding: 0;
+            margin-bottom: 5px;
+            /*background-color: #5bc0de;*/
+        }
+        /* 面板列表序号 */
+        .list-row-number {
+            float: left;
+            width:48px;
+            background-color: #008CFF;
+            margin: 3px 5px;
+        }
+        /* 面板列表出发城市 */
+        .list-row-start {
+            float: left;
+            width: 80px;
+            color: whitesmoke;
+            /*background-color: #008CFF;*/
+            margin: 3px 5px;
+        }
+        /* 面板列表到达城市 */
+        .list-row-end {
+            float: left;
+            width: 100px;
+            color: whitesmoke;
+
+            /*background-color: #008CFF;*/
+            margin: 3px 5px;
+        }
+        /* 面板列表到达城市热度 */
+        .list-row-path {
+            float: left;
+            width: 50px;
+            color: whitesmoke;
+
+            /*background-color: #008CFF;*/
+            margin: 3px 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="outer-box">
+    <!-- 地图展示 -->
+    <div id="container">
+    </div>
+    <!-- 最热路线展示 -->
+    <div id="panel">
+        <div class="sort-list">
+            <div class="choice-btn">最热路线</div>
+            <!-- 路线列表展示 -->
+            <div class="list-panel" id="list-panel">
+<!--                <div class="list-row" id="list-row">
+                    <div class="list-row-number">序号</div>
+                    <div class="list-row-start">起点</div>
+                    <div class="list-row-end">终点</div>
+                    <div class="list-row-path">人数</div>
+                </div>-->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 获取地图基本控件 -->
+<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+
+<script type="text/javascript" src='//webapi.amap.com/maps?v=1.3&key=160cab8ad6c50752175d76e61ef92c50'></script>
+<script src="js/dat.gui.min.js"></script>
+<!-- UI组件库 1.0 -->
+<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+
+<script type="text/javascript">
+//    创建路线展示面板
+//    create_list_row();
+    function  create_list_row(data) {
+        var list_panel = document.getElementById('list-panel');
+        if( !list_panel ) return false;
+
+        for(var i=0; i<data.length && i < 10; i++) {
+
+            var list_row = document.createElement('div');
+            var list_row_number = document.createElement('div');
+            var list_row_start = document.createElement('div');
+            var list_row_end = document.createElement('div');
+            var list_row_path = document.createElement('div');
+
+            //创建一行
+            list_row.setAttribute("class", "list-row");
+            list_row.setAttribute("id", "list_row_" + i +"");
+
+            //创建行里的内容
+            list_row_number.setAttribute("class", "list-row-number");
+            list_row_number.innerHTML =  i + 1;
+            list_row_start.setAttribute("class", "list-row-start");
+//        list_row_start.innerHTML = document.getElementsByClassName("choice-btn")[0].childNodes[0].nodeValue;
+            list_row_start.innerHTML = data[i].start;
+            list_row_end.setAttribute("class", "list-row-end");
+            list_row_end.innerHTML = data[i].end;
+            list_row_path.setAttribute("class", "list-row-path");
+            list_row_path.innerHTML = data[i].people;
+
+
+            list_row.appendChild(list_row_number);
+            list_row.appendChild(list_row_start);
+            list_row.appendChild(list_row_end);
+            list_row.appendChild(list_row_path);
+            list_panel.appendChild(list_row);
+        }
+    }
+
+    //创建地图
+    var map = new AMap.Map('container', {
+        resizeEnable: false,
+        zoom: 6
+    });
+
+    map.setMapStyle('amap://styles/blue');      //设置地图样式
+    map.setFeatures(["bg"]);             //设置地图显示内容
+
+    //加载地图控件
+    AMapUI.load(['ui/misc/PathSimplifier', 'ui/overlay/SimpleMarker','lib/$', 'lib/utils'], function(PathSimplifier, SimpleMarker, $, utils) {
+
+
+        function buildPoints(data) {
+            function buildDataArray(data) {
+                for(var i=0; i<data.length; i++) {
+
+                }
+                return d;
+            }
+//            console.log(data);
+            var provinces, redPoint, bluePoint, canvas, colorFlag = 0,	started;
+
+            map.plugin(['AMap.CustomLayer', 'AMap.DistrictSearch'], function() {
+                var search = new AMap.DistrictSearch();
+                search.search('中国', function(status, data) {
+                    if (status === 'complete') {
+                        provinces = data['districtList'][0]['districtList'];
+                        for (var i = 0; i < provinces.length; i += 1) {
+                            provinces[i].radious = Math.max(2, Math.floor(Math.random() * 10));
+//                        console.log(provinces[i].radious);
+                        }
+                        redPoint = buildPoint('red');
+                        bluePoint = buildPoint('blue');
+                        canvas = document.createElement('canvas');
+                        canvas.width = map.getSize().width;
+                        canvas.height = map.getSize().height;
+                        var cus = new AMap.CustomLayer(canvas, {
+                            zooms: [3, 8],
+                            zIndex: 12
+                        });
+                        cus.render = onRender;
+                        cus.setMap(map);
+                    }
+                });
+            });
+
+            function buildPoint(color) {
+                var c = document.createElement("canvas");
+                c.width = c.height = 40;
+                var ctx = c.getContext("2d");
+                var grd = ctx.createRadialGradient(20, 20, 0, 20, 20, 20);
+                grd.addColorStop(0, color);
+                grd.addColorStop(1, "white");
+                ctx.fillStyle = grd;
+                ctx.beginPath();
+                ctx.arc(20, 20, 20, 0, 2 * Math.PI);
+                ctx.fill();
+                return c;
+            }
+            function onRender() {
+                for (var i = 0; i < provinces.length; i += 1) {
+//            console.log(provinces[i].center);       //原经纬度
+
+                    provinces[i].containerPos = map.lngLatToContainer(provinces[i].center);
+//            console.log(provinces[i].containerPos);     //转换后地图上的位置
+                }
+                draw();
+                if(!started){
+                    autoSize();
+                    started = true;
+                }
+            }
+            function autoSize () {
+                draw();
+                setTimeout(autoSize, 250);
+            }
+            function draw() {
+                var point = colorFlag ? bluePoint : redPoint;
+                var context = canvas.getContext('2d');
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                for (var i = 0; i < provinces.length; i += 1) {
+                    var province = provinces[i];
+                    var radious = province.radious;
+                    context.drawImage(point,
+                        province.containerPos.x - radious,
+                        province.containerPos.y - radious,
+                        radious * 2,
+                        radious * 2
+                    );
+                    province.radious = (radious + 1) % 10;
+                }
+                colorFlag = (colorFlag + 1) % 2;
+            }
+        }
+
+        if (!PathSimplifier.supportCanvas) {
+            alert('当前环境不支持 Canvas！');
+            return;
+        }
+
+        //创建轨迹样式
+        var pathSimplifierIns = new PathSimplifier({
+            zIndex: 100,
+            map: map,
+            getPath: function(pathData, pathIndex) {
+
+                //返回轨迹数据中的节点坐标信息
+                return pathData.path;
+            },
+            getHoverTitle: function(pathData, pathIndex, pointIndex) {
+                //返回鼠标悬停时显示的信息
+                if (pointIndex >= 0) {
+                    //point
+                    return pathData.name + '，点:' + pointIndex + '/' + pathData.path.length;
+                }
+                return pathData.name + '，点数量' + pathData.path.length;
+            },
+            renderOptions: {
+                //轨迹线的样式
+                pathLineStyle: {
+                    strokeStyle: 'rgba(255,255,255,0)',
+                    lineWidth: 0.1,
+                    borderWidth: 0,
+                    dirArrowStyle: false
+
+                },
+                //被选中的轨迹线样式
+                pathLineSelectedStyle: {
+                    strokeStyle: 'white',
+                    lineWidth: 0.5,
+                    borderWidth: 0,
+                    dirArrowStyle: false
+                },
+                //开始节点
+                startPointStyle: {
+                    radius: 2,
+                    fillStyle: 'rgba(253,75,13,1)',
+                    strokeStyle: 'rgba(253,75,13,1)',
+                    lineWidth: 0
+                },
+                //结束节点
+                endPointStyle: {
+                    radius: 1,
+                    fillStyle: 'rgba(253,75,13,1)',
+                    strokeStyle: 'rgba(253,75,13,1)',
+                    lineWidth: 0
+                }
+            }
+        });
+
+        //加载轨迹
+        window.pathSimplifierIns = pathSimplifierIns;
+
+        //创建轨迹数组dataArr，为对象数组
+        var dataArr = [];
+
+        //创建数组里的对象
+        function dataObject(name, path){
+            this.name = name;
+            this.path = path;       //path是一个对象数组
+        }
+
+        //从json文本中读取数据
+        $.getJSON('json/path.json', function(d) {
+            //设置路径数据，创建轨迹
+            createPathData(d);
+
+            //设置轨迹巡航路径
+            initPath(d);
+
+            //创建路线面板
+            create_list_row(d);
+
+            //画点
+            buildPoints(d);
+        });
+
+        //创建路径数据
+        function createPathData(d) {
+
+            for(var i=0; i<d.length - 37; i++) {
+                var path_arr = [];              //路径数组
+                var start_point = [parseFloat(d[i].start_loc.split(",")[1]), parseFloat(d[i].start_loc.split(",")[0])];
+                var end_point = [parseFloat(d[i].end_loc.split(",")[1]), parseFloat(d[i].end_loc.split(",")[0])];
+                var start_lng = parseFloat(d[i].start_loc.split(",")[1]);
+                var start_lat = parseFloat(d[i].start_loc.split(",")[0]);
+                var end_lng = parseFloat(d[i].end_loc.split(",")[1]);
+                var end_lat = parseFloat(d[i].end_loc.split(",")[0]);
+                var k = Math.abs(start_lat - end_lat);
+                console.log(d[i].end);
+
+                console.log("start_point: " + start_point);
+                console.log("end_point: " + end_point);
+
+                var z;
+                if( k <= 1.5) {
+                    z =0.5;
+                } else if( k > 1.5 & k < 2){
+                    z = 1;
+                } else if( k>= 2 & k < 4) {
+                    z =3;
+                } else {
+                    z =4;
+                }
+                var mid_lng = (start_lng + z + end_lng) / 2;
+                var mid_lat = (start_lat + z + end_lat) / 2;
+                var mid_point = [mid_lng, mid_lat];
+//                path_arr.push(start_point);
+//                path_arr.push(mid_point);
+//                path_arr.push(end_point);
+
+                for(var t=0; t<1;) {
+                    var x = (1 - t) * (1 - t) * start_lng + 2 * t * (1 - t) * mid_lng + t * t * end_lng;
+                    var y = (1 - t) * (1 - t) * start_lat + 2 * t * (1 - t) * mid_lat + t * t * end_lat;
+                    var p = [x, y];
+                    t += 0.01;
+                    path_arr.push(p);
+                }
+//                path_arr.push(start_point);
+//                path_arr.push(end_point);
+//
+                var path_data = new dataObject(
+                    d[i].start + "->" + d[i].end,       //name
+//                    PathSimplifier.getGeodesicPath(start_point, end_point, 20000)                      //对象数组
+                    path_arr
+                );
+                dataArr.push(path_data);
+
+                if(d[i].people > 500) {
+                    new SimpleMarker({
+                        //显示定位基点
+                        showPositionPoint: true,
+                        iconLabel:{
+                            innerHTML: d[i].end,
+                            style:{
+                                color: 'rgb(0,167,210)',
+                                fontSize: "50%",
+//                                marginTop: '-10px'
+                            }
+                        },
+                        iconStyle: '',
+                        map: map,
+                        position: [parseFloat(d[i].end_loc.split(",")[1]), parseFloat(d[i].end_loc.split(",")[0])]
+                    });
+                }
+
+            }
+            console.log(dataArr);
+            pathSimplifierIns.setData(dataArr);
+        }
+
+        //初始化路径数据
+        function initPath(data) {
+            for(var i=0; i<data.length - 37; i++) {
+                initRouteItem(data[i],i);
+            }
+        }
+
+        //初始化每一条路径
+        function initRouteItem(pathData, idx) {
+            getNavg(idx, pathData.people / 2000);       //设置路径宽度
+            if(pathNavigs[idx]) {
+                pathNavigs[idx].setSpeed(parseFloat(pathData.time)*10000);        //设置路径速度
+            }
+            return pathNavigs[idx];
+        }
+
+        //创建轨迹巡航器数组，一条路径创建一个轨迹巡航器
+        var pathNavigs = [];
+        function getNavg(pathIndex, width) {
+            if(!pathNavigs[pathIndex]) {
+                //创建一个轨迹巡航器
+                var navg = pathSimplifierIns.createPathNavigator(pathIndex, {
+                    loop: true,
+                    speed: 70000,
+                    pathNavigatorStyle: {
+                        width: 1,
+                        height: 1,
+                        content: 'none',
+                        fillStyle: 'rgba(253,75,13,0.5)',
+                        strokeStyle: 'rgba(253,75,13,0.5)',
+                        pathLinePassedStyle: {
+                            strokeStyle: 'rgb(253,217,35)',
+                            lineWidth: width,
+                            borderWidth: 0
+                        }
+                    }
+                });
+                navg.start();
+                pathNavigs[pathIndex] = navg;
+            }
+            return pathNavigs[pathIndex];
+        }
+
+    });
+
+</script>
+</body>
+
+</html>

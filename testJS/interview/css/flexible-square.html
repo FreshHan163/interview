@@ -75,6 +75,19 @@
 			left: 0;
 			top: 20px;
 		}
+		.rec5 {
+			background-color: #777620;
+			width: 512px;
+			height: 0;
+			padding-top: 512px;
+			float: left;
+			position: relative;
+		}
+		.rec5 > .explanation {
+			position: absolute;
+			left:0;
+			top: 20px;
+		}
 	</style>
 </head>
 <body>
@@ -84,14 +97,13 @@
 			<p>百分比和vh\vw值还是存在差距的，vw始终是文档宽度，百分比是相对于父元素的</p>
 			<p>width为百分比，height为对应的高度vw</p>
 			<p>记得要设置body : width:100vw; height:100vh;</p>
-			<div style="width: 30%; height: 30vm;background-color: red"></div>
 		</div>
 		<div class="rec2">
 			<h2>CSS3 padding-bottom</h2>
 			<p>magin\padding的数值是相对于父元素的宽度计算的</p>
 			<p>确定父元素宽度，利用padding-bottom撑开容器，但此时添加内容，会造成高度增加</p>
 			<p>添加一行： height: 0;</p>
-			<p>该方法中，不能用padding-top,否则添加内容后，即使添加了height:0; 高度依然会在增加。</p>
+			<p>该方法中，同样适用于padding-top</p>
 			<p>缺点：会导致在元素上设置的max-width属性失效（max-height不收缩）</p>
 		</div>
 	</div>
@@ -110,6 +122,14 @@
 				<p> margin 会造成垂直方向的外边距合并，所以需要在父元素上触发BFC，设置overflow:hidden;</p>
 				<h4> margin-top\padding-top添加内容时，会造成高度增加</h4>
 				<p> 解决办法：正方形块 position:relative,内容块设置为position: absolute</p>
+			</div>
+		</div>
+	</div>
+	<div class="box">
+		<div class="rec5">
+			<div class="explanation">
+				<h2>CSS3 padding-top</h2>
+				这里采用padding-top + height:0 + width 的方式实现，和padding-bottom类似。
 			</div>
 		</div>
 	</div>

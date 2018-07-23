@@ -1,0 +1,229 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>select选择框内容左右移动添加删除栏目JS代码 - 【科e互联】</title>
+    <meta name="keywords" content="js特效,js栏目移动,栏目左右移动,select选择框,网页特效" />
+    <meta name="description" content="一款select选择框内容左右移动添加删除栏目JS代码网页特效，该特效基于jquery-1.8.3.min.js实现，简单实用，选中选项内容，点击移动按钮可进行内容左右移动，双击option内容也可左右移动，支持单选移动、多选移动和一键全部移动！">
+    <link rel="stylesheet" type="text/css" href="public/css/selectcss.css" />
+    <script type="text/javascript" src="public/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //移到右边
+            $('#add').click(function(){
+                //先判断是否有选中
+                if(!$("#select1 option").is(":selected")){
+                    alert("请选择需要移动的选项")
+                }
+                //获取选中的选项，删除并追加给对方
+                else{
+                    $('#select1 option:selected').appendTo('#select2');
+                }
+            });
+
+            //移到左边
+            $('#remove').click(function(){
+                //先判断是否有选中
+                if(!$("#select2 option").is(":selected")){
+                    alert("请选择需要移动的选项")
+                }
+                else{
+                    $('#select2 option:selected').appendTo('#select1');
+                }
+            });
+
+            //全部移到右边
+            $('#add_all').click(function(){
+                //获取全部的选项,删除并追加给对方
+                $('#select1 option').appendTo('#select2');
+            });
+
+            //全部移到左边
+            $('#remove_all').click(function(){
+                $('#select2 option').appendTo('#select1');
+            });
+
+            //双击选项
+            $('#select1').dblclick(function(){ //绑定双击事件
+                //获取全部的选项,删除并追加给对方
+                $("option:selected",this).appendTo('#select2'); //追加给对方
+            });
+
+            //双击选项
+            $('#select2').dblclick(function(){
+                $("option:selected",this).appendTo('#select1');
+            });
+
+            //tab切换
+            $('.branch-body').css('display','none');
+            $('.branch-content').css('display','none');
+            $('.branch-head ul li:first').addClass('active');
+            $('.branch-body:nth-of-type(1)').css('display','block');
+            $('.branch-content:nth-of-type(1)').css('display','block');
+
+
+            $('.branch-head ul li').click(function () {
+                //移除所有active属性
+                $(this).siblings('li').removeClass('active');
+                //给当前id添加active属性
+                $(this).addClass('active');
+                //移除显示的content模块
+                $('.branch-body').hide();
+                //显示当前content模块
+//                var i = $(this).index();
+//                $('.branch-body').eq(i).css('display','block');
+                var activeTab = $(this).children('a').attr('href');
+                alert(activeTab);
+                $(activeTab).fadeIn();
+                $(activeTab).addClass('active');
+            });
+            $('.branch-body ul li').click(function(){
+                //移除所有active属性
+                $(this).siblings('li').removeClass('active');
+                //给当前id添加active属性
+                $(this).addClass('active');
+                //移除显示的content模块
+                $('.branch-content').hide();
+                //显示当前content模块
+//                var i = $(this).index();
+//                $('.branch-body').eq(i).css('display','block');
+                var activeTab = $(this).children('a').attr('href');
+                alert(activeTab);
+                $(activeTab).fadeIn();
+
+            });
+
+        });
+    </script>
+</head>
+<body class="keBody">
+<h1 class="keTitle">select选择框内容左右移动添加删除栏目JS代码</h1>
+<div class="kePublic">
+    <!--效果html开始-->
+    <div class="selectbox">
+        <div class="select-bar">
+            <select multiple="multiple" id="select1">
+                <option value="超级管理员">超级管理员</option>
+                <option value="普通管理员">普通管理员</option>
+                <option value="信息发布员">信息发布员</option>
+                <option value="财务管理员">财务管理员</option>
+                <option value="产品管理员">产品管理员</option>
+                <option value="资源管理员">资源管理员</option>
+                <option value="系统管理员">系统管理员</option>
+                <option value="超级管理员">超级管理员</option>
+                <option value="普通管理员">普通管理员</option>
+                <option value="信息发布员">信息发布员</option>
+                <option value="财务管理员">财务管理员</option>
+                <option value="产品管理员">产品管理员</option>
+                <option value="资源管理员">资源管理员</option>
+                <option value="科e互联">科e互联</option>
+            </select>
+        </div>
+
+        <div class="btn-bar">
+            <p><span id="add"><input type="button" class="btn" value=">" title="移动选择项到右侧"/></span></p>
+            <p><span id="add_all"><input type="button" class="btn" value=">>" title="全部移到右侧"/></span></p>
+            <p><span id="remove"><input type="button" class="btn" value="<" title="移动选择项到左侧"/></span></p>
+            <p><span id="remove_all"><input type="button" class="btn" value="<<" title="全部移到左侧"/></span></p>
+        </div>
+        <div class="select-bar">
+            <select multiple="multiple" id="select2"></select>
+        </div>
+    </div>
+    <!--效果html结束-->
+    <!--实现tab键切换-->
+    <div class="selectbox">
+        <div class="tab-box">
+            <input type="radio" name="demo" id="tab-switch-input1" checked="">
+            <input type="radio" name="demo" id="tab-switch-input2">
+            <input type="radio" name="demo" id="tab-switch-input3">
+            <div class="tab-box-label">
+                <label for="tab-switch-input1">
+                    <span>tab1</span>
+                </label>
+                <label for="tab-switch-input2">
+                    tab2
+                </label>
+                <label for="tab-switch-input3">
+                    tab3
+                </label>
+            </div>
+            <div class="tab-contents">
+                <div class="tab-content">
+                    content 1 显示
+                </div>
+                <div class="tab-content">
+                    content 2 显示
+                </div>
+                <div class="tab-content">
+                    content 3 显示
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--js实现tab页3级切换-->
+    <div class="selectbox">
+        <!--  一级部门布局显示  -->
+        <div class="branch-box">
+            <!--  一级部门--内容框  -->
+            <div class="branch-head" id="branch1">
+                <!-- 一级部门--列表框  -->
+                <ul id="province">
+                    <li class="branch"><a href="#America">美国</a></li>
+                    <li class="branch"><a href="#Australia">澳大利亚</a></li>
+                    <li class="branch"><a href="#China">中国</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--  二级部门显示  -->
+        <div class="branch-box">
+            <!--  二级部门--内容框  -->
+            <div class="branch-body" id="America">
+                <!-- 二级部门--列表框  -->
+                <ul id="city">
+                    <li class="branch"><a href="#newyork">纽约</a></li>
+                    <li class="branch"><a href="#seattle">西雅图</a></li>
+                    <li class="branch"><a href="#washington">华盛顿</a></li>
+                </ul>
+            </div>
+            <div class="branch-body" id="Australia">
+                澳大利亚
+            </div>
+            <div class="branch-body" id="China">
+                中国
+            </div>
+
+        </div>
+        <!--三级部门显示-->
+        <div class="branch-box">
+            <div class="branch-content" id="newyork">
+                纽约content 1 显示
+            </div>
+            <div class="branch-content" id="seattle">
+                西雅图
+            </div>
+            <div class="branch-content" id="washington">
+                华盛顿
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="keBottom">
+    <p class="keTxtP">科e互联网页特效集锦---更多特效请访问 <a class="keUrl" href="http://www.internetke.com" target="_blank">www.internetke.com</a></p>
+    <p class="keTxtP">本站导航：
+        <a href="http://www.internetke.com/" target="_blank" class="cor_bs">网站建设</a> |
+        <a href="http://www.internetke.com/material/" target="_blank" class="cor_bs">网页素材</a> |
+        <a href="http://www.internetke.com/effects/" target="_blank" class="cor_bs">网页特效</a> |
+        <a href="http://www.internetke.com/share/" target="_blank" class="cor_bs">设计分享</a> |
+        <a href="http://www.internetke.com/tutorial/" target="_blank" class="cor_bs">建站教程</a> |
+        <a href="http://www.internetke.com/model/" target="_blank" class="cor_bs">网站模版</a> |
+        <a href="http://www.internetke.com/appreciate/" target="_blank" class="cor_bs">酷站赏析</a>
+    </p>
+    <p class="keTxtP">＊尊重他人劳动成果，转载请自觉注明出处！注：此代码为【科e整理/原创特效】仅供学习交流，请勿用于商业用途。
+        <a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=a7df3558c291e0407375b9ad649d96a6e507286ffeb0650c65a221d1500a0779" class="button red" title="北京网站建设,网页特效QQ交流群-科e互联">加入QQ交流群</a></p>
+</div>
+<div class="mKeBanner"><script src='/plus/ad_js.php?aid=22' language='javascript'></script></div>
+</body>
+</html>

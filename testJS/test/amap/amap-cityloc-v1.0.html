@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>广州出发城市</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #outer-box {
+            height: 100%;
+            padding-right: 280px;
+        }
+
+        #container {
+            height: 100%;
+            width: 90%;
+        }
+
+        #panel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 390px;
+            z-index: 999;
+            height: 100%;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: #0D1A29;
+        }
+
+        #my-gui-container h3 {
+            margin: 10px 0 3px 0;
+        }
+
+        #exportConfigPanel pre {
+            margin: 0;
+        }
+        /* 列表展示面板 */
+        .sort-list {
+            position: absolute;
+            width: 100%;
+            margin: 25px 0;
+            height: 500px;
+            background-color: #1a1a1a;
+        }
+        /* 按钮面板 */
+        .choice-btn {
+            position: relative;
+            /*width: 90%;*/
+            height: 28px;
+            margin: 10px 15px;
+            background-color: #008CFF;
+            border: 0;
+            padding: 5px 0;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+        /* 面板标题 */
+        .choice-btn p{
+
+        }
+        /* 面板列表 */
+        .list-panel {
+            position: relative;
+            /*width: 90%;*/
+            height: 450px;
+            margin: 5px 15px;
+            border: 0;
+            padding: 5px 0;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+        }
+        /* 面板列表行 */
+        .list-row {
+            height: 28px;
+            padding: 0;
+            margin-bottom: 5px;
+            /*background-color: #5bc0de;*/
+        }
+        /* 面板列表序号 */
+        .list-row-number {
+            float: left;
+            width:28px;
+            background-color: #008CFF;
+            margin: 3px 5px;
+        }
+        /* 面板列表出发城市 */
+        .list-row-start {
+            float: left;
+            width: 80px;
+            color: whitesmoke;
+            /*background-color: #008CFF;*/
+            margin: 3px 5px;
+        }
+        /* 面板列表到达城市 */
+        .list-row-end {
+            float: left;
+            width: 100px;
+            color: whitesmoke;
+
+            /*background-color: #008CFF;*/
+            margin: 3px 5px;
+        }
+        /* 面板列表到达城市热度 */
+        .list-row-path {
+            float: left;
+            width: 50px;
+            color: whitesmoke;
+
+            /*background-color: #008CFF;*/
+            margin: 3px 5px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="outer-box">
+    <!-- 地图展示 -->
+    <div id="container">
+    </div>
+    <!-- 最热路线展示 -->
+    <div id="panel">
+        <div class="sort-list">
+            <div class="choice-btn">最热路线</div>
+            <!-- 路线列表展示 -->
+            <div class="list-panel" id="list-panel">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- 获取地图基本控件 -->
+<script type="text/javascript" src='//webapi.amap.com/maps?v=1.3&key=160cab8ad6c50752175d76e61ef92c50'></script>
+<script src="js/dat.gui.min.js"></script>
+<!-- UI组件库 1.0 -->
+<script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+
+<script src="js/amap-cityloc-v1.0.js"></script>
+</body>
+
+</html>

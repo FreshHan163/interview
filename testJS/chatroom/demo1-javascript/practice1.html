@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试原生的XMLHttpRequest</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = function(){
+        var submitAjax = document.getElementById("submitAjax");
+        submitAjax.addEventListener("click",function () {
+            var xmlHttpReq = null;  //声明一个空对象
+            if(window.ActiveXObject) {                              //IE5\IE6引入XMLHttpRequest对象
+                xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+            } else if(window.XMLHttpRequest) {
+                xmlHttpReq = new XMLHttpRequest();                  //实例化一个XMLHttpRequest对象
+            }
+            if(xmlHttpReq != null) {
+                xmlHttpReq.open("GET","test.php",true);         //默认是异步请求，true可以省略
+                xmlHttpReq.onreadystatechange = RequestCallBack;    //回调函数,这里是把整个函数赋值，而不是把函数返回值赋值？？？
+                xmlHttpReq.send(null);          //GET方式可以不指定参数或使用null为参数
+            }
+            function RequestCallBack(){
+                console.log(xmlHttpReq.readyState);
+//                console.table(xmlHttpReq);
+                if(xmlHttpReq.readyState == 4) {
+                    console.log(xmlHttpReq.status);
+                    if(xmlHttpReq.status == 200) {
+                        document.getElementById("outputAjax").innerHTML = xmlHttpReq.responseText;
+                    }
+                }
+            }
+
+        });
+    }
+</script>
+<button type="button" value="Ajax 提交" id="submitAjax">Ajax 提交</button>
+<div id="outputAjax" style="width:100px;height:100px;border:none;background-color:lightpink;">
+</div>
+</body>
+</html>

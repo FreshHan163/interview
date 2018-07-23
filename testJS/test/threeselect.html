@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css" rel="stylesheet">
+        .multiselect{
+            overflow: hidden;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+    <script type="text/javascript" src="public/js/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript">
+        <!--
+        /*
+         * 说明：将指定下拉列表的选项值清空
+         * 转自：Gdong Elvis ( http://www.gdcool.net )
+         *
+         * @param {String || Object]} selectObj 目标下拉选框的名称或对象，必须
+         */
+        function removeOptions(selectObj)
+        {
+            if (typeof selectObj != 'object')
+            {
+                selectObj = document.getElementById(selectObj);
+            }
+            // 原有选项计数
+            var len = selectObj.options.length;
+            for (var i=0; i < len; i++) {
+                // 移除当前选项
+                selectObj.options[0] = null;
+            }
+        }
+        function remove(selectId){
+            var len = $(selectId + ' option').length;   //所有选项个数,用size()或者length都可以
+//            console.log($('select[name="branch2"]').size());    //选中选项的个数
+            console.log(len);
+            for(var i=0; i < len; i++) {
+                console.log($(selectId + ' option[index="'+ i + '"]').val());
+//                console.log($('#branch2 option:last').val());
+//                console.log($('#branch2 option[value="浙江省"]').val());
+
+                $(selectId + ' option[index="'+ i + '"]').remove();
+//                $('#branch2 option[value="浙江省"]').remove();
+            }
+        }
+        /*
+         * @param {String || Object]} selectObj 目标下拉选框的名称或对象，必须
+         * @param {Array} optionList 选项值设置 格式：[{txt:'北京', val:'010'}, {txt:'上海', val:'020'}] ，必须
+         * @param {String} firstOption 第一个选项值，如：“请选择”，可选，值为空
+         * @param {String} selected 默认选中值，可选
+         */
+        function setSelectOption(selectObj, optionList, firstOption, selected) {
+            if (typeof selectObj != 'object')
+            {
+                selectObj = document.getElementById(selectObj);
+            }
+            // 清空选项
+            removeOptions(selectObj);
+            // 选项计数
+            var start = 0;
+            // 如果需要添加第一个选项
+            if (firstOption) {
+                selectObj.options[0] = new Option(firstOption, '');
+                // 选项计数从 1 开始
+                start ++;
+            }
+            var len = optionList.length;
+            for (var i=0; i < len; i++) {
+                // 设置 option
+                selectObj.options[start] = new Option(optionList[i].txt, optionList[i].val);
+                // 选中项
+                if(selected == optionList[i].val)  {
+                    selectObj.options[start].selected = true;
+                }
+                // 计数加 1
+                start ++;
+            }
+        }
+        function setSelect1(selectId,optionList,firstOption,selected){
+             remove(selectId);
+             var start = 0;
+             if(firstOption) {
+//                 $(selectId).get(0).selectedIndex = 1;
+                 $(selectId).append("<option value='"+ firstOption +"' index='"+ start +"'>"+firstOption+"</option>");
+
+                 // 选项计数从 1 开始
+                 start++;
+             }
+             var len = optionList.length;   //获取数组长度
+            for(var i=0; i < len; i++) {
+                $(selectId).append("<option value='"+ optionList[i].val +"' index='"+ start +"'>"+optionList[i].txt+"</option>");
+                start++;
+            }
+//            $('#branch2').append("<option value='测试' txt='测试txt' index='dd'>测试</option>");
+        }
+        function  setSelect2(selectId,optionList,firstOption) {
+            remove(selectId);
+            var start = 0;
+            if(firstOption) {
+//                 $(selectId).get(0).selectedIndex = 1;
+                $(selectId).append("<option value='"+ firstOption +"' index='"+ start +"'>"+firstOption+"</option>");
+
+                // 选项计数从 1 开始
+                start++;
+            }
+
+        }
+        //-->
+
+        $('#branch1').append("<option value='"+ 11 +"'>"+11+"</option>");
+        var cityArr = [];
+        cityArr['江苏省'] =
+            [
+                {txt:'南京', val:'南京'},
+                {txt:'无锡', val:'无锡'},
+                {txt:'徐州', val:'徐州'},
+                {txt:'苏州', val:'苏州'},
+                {txt:'南通', val:'南通'},
+                {txt:'淮阴', val:'淮阴'},
+                {txt:'扬州', val:'扬州'},
+                {txt:'镇江', val:'镇江'},
+                {txt:'常州', val:'常州'}
+            ];
+        cityArr['浙江省'] =
+            [
+                {txt:'杭州', val:'杭州', index:'0'},
+                {txt:'宁波', val:'宁波', index:'1'},
+                {txt:'温州', val:'温州', index:'2'},
+                {txt:'湖州', val:'湖州', index:'3'}
+            ];
+        function setCity(province)
+        {
+            setSelectOption('city', cityArr[province], '-请选择-');
+        }
+
+        var provinceArr =
+            [
+                {"p":"江西省",
+                    "c":[
+                        {"ct":"南昌市",
+                            "d":[
+                                {"dt":"西湖区"},
+                                {"dt":"东湖区"},
+                                {"dt":"高新区"}
+                            ]},
+                        {"ct":"赣州市",
+                            "d":[
+                                {"dt":"瑞金县"},
+                                {"dt":"南丰县"},
+                                {"dt":"全南县"}
+                            ]}
+                    ]},
+                {"p":"北京",
+                    "c":[
+                        {"ct":"东城区"},
+                        {"ct":"西城区"}
+                    ]},
+                {"p":"河北省",
+                    "c":[
+                        {"ct":"石家庄",
+                            "d":[
+                                {"dt":"长安区"},
+                                {"dt":"桥东区"},
+                                {"dt":"桥西区"}
+                            ]},
+                        {"ct":"唐山市",
+                            "d":[
+                                {"dt":"滦南县"},
+                                {"dt":"乐亭县"},
+                                {"dt":"迁西县"}
+                            ]}
+                    ]}
+            ];
+        //一级部门
+        var first_branch = function () {
+            $.each(provinceArr,function(i,province){
+                $('#branch1').append("<option value='"+ province.p +"'>"+province.p+"</option>");
+            });
+            sec_branch();
+        };
+        //二级部门
+        var sec_branch = function () {
+            $('#branch2').html('');
+            var n = $('#branch1').get(0).selectedIndex;
+            $.each(provinceArr[n].c,function(i,city){
+                $('#branch2').append("<option value='"+ city.ct +"'>"+city.ct+"</option>");
+            });
+            third_branch();
+        };
+        //业务部门
+        var third_branch = function () {
+            $('#branch3').html('');
+            var n = $('#branch1').get(0).selectedIndex;
+            var m = $('#branch2').get(0).selectedIndex;
+            console.log("n:" + n);
+            console.log("m:" + m);
+            console.log(typeof(provinceArr[n].c[m].d[0].dt));
+            console.log(provinceArr[n].c[m].d[0].dt);
+
+            if(typeof(provinceArr[n].c[m].d) == 'undefined'){
+                $('#branch3').css("display","none");
+            }else {
+                $('#branch3').css("display","inline");
+                $.each(provinceArr[n].c[m].d,function(i,district){
+                    $('#branch3').append("<option value='"+ district.dt +"'>"+district.dt+"</option>");
+                });
+            }
+
+        };
+        $(function () {
+            $('#branch1').change(function () {
+//                setSelect1('#branch2', cityArr['江苏省'], '-请选择-' );
+                sec_branch();
+            });
+            $('#branch2').change(function() {
+//                setSelect2('#branch2', cityArr['浙江省'], '-请选择-' );
+                third_branch();
+            });
+
+            first_branch();
+        });
+    </script>
+    <title>jquery表格</title>
+</head>
+<body>
+
+<select name="province" id="province" onchange="if(this.value != '') setCity(this.options[this.selectedIndex].value);">
+    <option value="">-请选择-</option>
+    <option value="江苏省">江苏省</option>
+    <option value="浙江省">浙江省</option>
+</select>
+省
+<select name="city" id="city">
+    <option value="">-请选择-</option>
+</select>
+市
+<br/>
+<div>
+    <select name="branch1" id="branch1" class="multiselect">
+<!--        <option value="">-请选择-</option>
+        <option value="江苏省">江苏省</option>
+        <option value="浙江省">浙江省</option>-->
+    </select>省
+    <select name="branch2" id="branch2" class="multiselect">
+        <!--<option value="" index="0">-请选择-</option>-->
+        <!--<option value="江苏省" index="1">江苏省</option>-->
+        <!--<option value="浙江省" index="2">浙江省</option>-->
+    </select>市
+    <select name="branch3" id="branch3" class="multiselect">区
+    </select>
+</div>
+<script>
+    var brand_a = ["安驰", "奥迪"];
+    var brand_b = {
+        "安驰": ["小公主", "人生"],
+        "奥迪": ["小王子", "前途"]
+    };
+    var brand_c = {
+        "小公主": ["1999 自动", "2001 手动"],
+        "人生": ["1999 自动", "2001 手动"],
+        "小王子": ["1999 自动", "2001 手动"],
+        "前途": ["1999 自动", "2001 手动"]
+    };
+    jQuery(function($){
+        var a = $("#brand_a"),
+            b = $("#brand_b"),
+            c = $("#brand_c");
+        a.append("<option value=''>请选择</option>");
+        b.append("<option value=''>请选择</option>");
+        c.append("<option value=''>请选择</option>");
+        $(brand_a).each(function(i, dom){
+            a.append("<option value='"+dom+"'>" + dom + "</option>");
+//            alert(i);
+        });
+        a.change(function(){
+            var me = $(this),str;
+            if(str = me.val()){
+                var arr = brand_b[str];
+                b.html("").append("<option value=''>请选择</option>");
+                c.html("").append("<option value=''>请选择</option>");
+                $(arr).each(function(i, dom){
+                    b.append("<option value='"+dom+"'>" + dom + "</option>");
+                });
+            }else{
+                b.html("").append("<option value=''>请选择</option>");
+                c.html("").append("<option value=''>请选择</option>");
+            }
+        });
+        b.change(function(){
+            var me = $(this),str;
+            if(str = me.val()){
+                var arr = brand_c[str];
+                c.html("").append("<option value=''>请选择</option>");
+                $(arr).each(function(i, dom){
+                    c.append("<option value='"+dom+"'>" + dom + "</option>");
+                });
+            }else{
+                c.html("").append("<option value=''>请选择</option>");
+            }
+        });
+    });
+</script>
+<select id="brand_a"></select>
+<select id="brand_b"></select>
+<select id="brand_c"></select>
+</body>
+</html>

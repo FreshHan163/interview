@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS画几何图形</title>
+	<style>
+		<!-- 绘制三角形 -->
+		div#triangleUp {
+			width: 0;
+			height: 0;
+			border-left: 50px solid blue;
+			border-right: 50px solid yellow;
+			border-bottom: 100px solid red;
+		}
+		.borders {
+			width: 0;
+			height: 0;
+			border-left: 50px solid blue;
+			border-right: 50px solid yellow;
+			border-bottom: 100px solid red;
+			border-top: 100px solid green;
+		}
+		.ups {
+			width: 0;
+			height: 0;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			border-bottom: 100px solid red;
+			margin:10px 0;
+		}
+		.downs {
+			width: 0;
+			height: 0;
+			border-left: 50px solid transparent;
+			border-right: 50px solid transparent;
+			/*border-bottom: 100px solid red;*/
+			border-top: 100px solid green;
+		}
+		.topRight {
+			width: 0;
+			height: 0;
+			/*border-left: 100px solid green;*/
+			border-right: 100px solid red;
+			border-top: 100px solid transparent;
+		}
+		#demo {
+			width: 200px;
+			line-height: 100px;
+			background-color: #fff;
+			position: relative;
+			border: 1px solid #5BBF5A;
+			text-align: center;
+			font-size: 25px;
+		}
+
+		#demo:after, #demo:before {
+			border: solid transparent;
+			content: ' ';
+			width: 0;
+			height:  0;
+			position: absolute;
+		}
+
+		#demo:after {
+			border-width: 10px;
+			border-top-color: #fff;
+			top: 100px;
+			left: 150px;
+		}
+
+		#demo:before {
+			border-width: 11px;
+			border-top-color: #5BBF5A;
+			top: 100px;
+			left: 149px;
+		}
+	</style>
+</head>
+<body>
+	<div class="borders"></div>
+	<div id="triangleUp" class="ups"></div>
+	<div id="triangle-down" class="downs"></div>
+	<div id="triangle-left"></div>
+	<div id="triangle-right"></div>
+	<div class="topRight"></div>
+<div id="demo">helloworld!</div>
+
+</body>
+</html>

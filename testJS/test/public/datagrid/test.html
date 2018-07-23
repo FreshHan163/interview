@@ -1,0 +1,66 @@
+<html>
+<head>
+<link href="datagrid.css" rel="stylesheet" type="text/css"/> 
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="datagrid.js"></script>
+</head>
+
+<body>
+<div id="aaa">
+</div>
+<div id="blk_1">111</div>
+<div data-sudaclick="222">222</div>
+<script type="text/javascript">
+    function Download() {
+        // IE
+        if(/msie/i.test(navigator.userAgent)) {
+            var w = window.open("", "导出", "height=0,width=0,toolbar=no,menubar=no,scrollbars=no,resizable=on,location=no,status=no");
+            var filename = document.getElementById("filename").value  ;
+            var content = document.getElementById("content").value;
+            w.document.charset = "UTF-8";
+            w.document.write(content);
+            w.document.execCommand("SaveAs", false,  filename+'.txt');
+            w.close();
+        }
+        // Firefox/Chrome/Safari/Opera
+        else {
+            var filename = document.getElementById("filename").value;
+            var content = document.getElementById("content").value;
+            str =  encodeURIComponent(content);
+            document.getElementById("SaveChrome").download = filename+'.txt';
+            var aLink = document.getElementById("SaveChrome") ;
+            aLink.href = "data:text/csv;charset=utf-8,"+str;
+//            aLink.click();
+        }
+    }
+    $('#aaa').mydatagrid({
+	data:[
+		{"day_key":"2012-07-13","log_pv":"116,086,385","log_uip":"9,047,257","suda_pv":"69,670,202","suda_uip":"6,514,247","suda_uv":"10,135,744"},
+		{"day_key":"&nbsp;&nbsp;&nbsp;&nbsp;2012-07-14","log_pv":"94,235,295","log_uip":"8,307,930","suda_pv":"50,888,218","suda_uip":"6,019,526","suda_uv":"7,930,732"},
+		{"day_key":"&nbsp;&nbsp;&nbsp;&nbsp;2012-07-15","log_pv":"87,222,703","log_uip":"8,163,501","suda_pv":"47,898,572","suda_uip":"6,346,956","suda_uv":"8,224,151"},
+		{"day_key":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012-07-16","log_pv":"98,985,674","log_uip":"8,513,636","suda_pv":"57,482,032","suda_uip":"6,529,051","suda_uv":"10,211,790"},
+		{"day_key":"&nbsp;&nbsp;&nbsp;&nbsp;2012-07-17","log_pv":"110,411,704","log_uip":"8,936,479","suda_pv":"66,995,234","suda_uip":"6,684,601","suda_uv":"10,316,246"},
+		{"day_key":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012-07-18","log_pv":"109,543,237","log_uip":"8,484,722","suda_pv":"66,481,426","suda_uip":"6,480,954","suda_uv":"9,980,280"},
+		{"day_key":"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012-07-19","log_pv":"96,021,572","log_uip":"2,304,990","suda_pv":"63,536,434","suda_uip":"6,413,642","suda_uv":"9,907,101"}
+	],
+	columns: [{title:'����',field:'day_key'},{title:'PV',field:'log_pv'},{title:'UIP',field:'log_uip'}],
+	tree:{tree:1}
+});
+
+$(function(){
+    Download();
+	var $divs = $('[data-sudaclick]');
+    var $divs2 = $('[id^=blk_]');
+	alert($divs.length);
+	alert($divs2.length);
+	$divs = $divs.add($divs2);
+	$divs.css('border', 'solid 1px black');
+});
+</script>
+<div>
+    <button id="filename" value="filename">filename</button>
+    <button id="content" value="filecontent">filecontent</button>
+</div>
+<a id="SaveChrome" href="www.aidu.com"> 百度的超链接</a>
+</body>
+</html>

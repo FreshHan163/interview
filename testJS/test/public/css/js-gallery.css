@@ -1,0 +1,73 @@
+/*
+*	本文件用于js-gallery.html，实现对于图片的切换
+*/
+
+/* 文档基本显示 */
+/*css reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin: 0;padding: 0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style: normal;font-weight: normal;}
+ol,ul{list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;font-weight: normal;}
+
+/*文字排版*/
+.f12{font-size: 12px;}
+.f14{font-size: 14px;}
+.f16{font-size: 16px;}
+.fb{font-weight: bold;}
+.fn{font-weight: normal;}
+.lh150{line-height:150%;}
+.lh180{line-height:180%;}
+.lh200{line-height:200%;}
+.unl{text-decoration: underline;}
+.no_unl{text-decoration: none;}
+
+/*定位*/
+.tl{text-align: left;}
+.tc{text-align: center;}
+.tr{text-align: right;}
+.bc{margin-left: auto;margin-right: auto;}
+.fl{float: left;display:inline;}
+.fr{float: right;display:inline;}
+.cb{clear:both;}
+.cl{clear: left;}
+.cr{clear: right;}
+.clearfix:after{content: '.';display:block;height: 0;clear: both;visibility: hidden;}
+.clearfix{display:inline-block}*html
+.clearfix{height: 1%}.Clearfix{display: block;}
+.vm{vertical-align: middle;}
+.pr{position: relative;}
+.pa{position: absolute;}
+abs-right{position: absolute;right: 0;}
+.zoom{zoom:1;}
+.hidden{visibility: hidden;}
+.none{display: none}
+
+/*长度高度*/
+.w10{width: 10px;}
+.w20{width: 20px;}
+.w30{width: 30px;}
+.w40{width: 40px;}
+.w50{width: 50px;}
+.w70{width: 70px;}
+.w90{width: 90px;}
+.w100{width: 100px;}
+.w300{width: 300px;}
+.w500{width: 500px;}
+.w600{width: 600px;}
+.w700{width: 700px;}
+.w800{width: 800px;}
+.w{width: 100%;}
+.h50{height: 50px;}
+.h100{height: 100px;}
+.h200{height: 200px;}
+.h400{height: 400px;}
+.h{height: 100%;}
+
+/* 文档基本框架 */
+/* 文档基本框架--布局 */
+/* 文档定制组件 */
+/* 文档定制组件--标题 */
+/* 文档定制组件--列表 */
+/* 文档定制组件--超链接 */
+/* 文档定制组件--图片显示 */

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>div垂直居中和水平居中</title>
+	<style>
+		/* css reset */
+		html,body {
+			height: 100%;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		/* 布局模块 */
+		body {
+			display: flex;
+			flex-direction: column;
+		}
+		header,footer {
+			/*flex: 1 0 30%;*/
+			/*background-color: #008CFF;*/
+		}
+		.main {
+			flex: 1 0 40%;
+			/*background-color: #e4b9b9;*/
+		}
+		h2 {
+			text-align: center;
+			margin: 5px 0;
+		}
+
+		/* 水平居中 */
+		.column {
+			margin: 10px auto;
+			height: 100px;
+			/*width: 800px;*/
+			background-color: #F9F2F4;
+			text-align: center;
+			color: white;
+		}
+		.tip1-row {
+			background-color: #9d9d9d;
+			width: 600px;
+			height: 60px;
+			margin: 0 auto;
+			color: white;
+		}
+		.parent {
+			display:table;
+			background-color: #F9F2F4;
+			width: 400px;
+			height:100px;
+			padding:5px;
+		}
+		.tip2-row {
+			display: inline-block;
+			vertical-align: middle;
+			background-color: #9d9d9d;
+		}
+		.row1 {
+			text-align:center;
+			padding: 5px;
+			background-color: #F9F2F4;
+		}
+		.row1 span {
+			color: #C7254E;
+		}
+		[class^="column"] {
+			margin: 10px;
+			background-color: #F9F2F4;
+		}
+		.column-inline1 {
+			height: 50px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+		<header>
+			<h2>水平居中</h2>
+			<div class="row1">
+				<h4>对<span>inline,inline-block,inline-table,inline-flex</span>居中：text-align:center;即可</h4>
+			</div>
+			<div class="column">
+				<div class="tip1-row">
+					<h4>水平居中block类元素</h4>
+					<p>block元素确定宽度的情况下，采用 margin-left 和 margin-right 为0实现水平居中</p>
+				</div>
+			</div>
+			<div class="column">
+				<div class="tip2-row">
+					<h4>水平居中多个block类元素</h4>
+					<p>通过 inline-block 实现</p>
+				</div>
+				<div class="tip2-row">
+					<h4>父元素</h4>
+					<p>text-align:center;</p>
+				</div>
+				<div class="tip2-row">
+					<h4>子元素</h4>
+					<p>display:inline-block;</p>
+					<p>让三个子元素块基于中间线对齐：vertical-align: middle;</p>
+				</div>
+			</div>
+			<div class="parent">
+				<div class="tip2-row">ddd</div>
+			</div>
+		</header>
+		<div class="main">
+			<h2>垂直居中</h2>
+			<div class="column-inline1">
+				<p>一行元素垂直居中：padding-top,padding-bottom相同</p>
+			</div>
+			<div class="column-inline2">
+				<p>一行元素垂直居中：父元素的line-height 和 height相同</p>
+			</div>
+			<div class="column-inline3">
+				<p>多行元素垂直居中：padding-top,padding-bottom相同</p>
+				<p>或采用 父元素display: table</p>
+				<p>子元素：display: table-cell;vertical-align:middle;</p>
+			</div>
+		</div>
+		<footer>
+			<h2>水平&垂直居中</h2>
+			<h4>div——inline-block水平&垂直居中</h4>
+		</footer>
+</body>
+</html>

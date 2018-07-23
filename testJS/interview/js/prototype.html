@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试JS的原型链</title>
+	<script>
+		var A = function	() {};
+		var B = {};
+    console.log('A是函数，B是对象，函数是一种特殊的对象');
+
+    console.log('测试__proto__');
+    console.log('A.__proto__');
+    console.log(A.__proto__);
+		console.log('B.__proto__');
+		console.log(B.__proto__);
+    console.log('A.__proto__.__proto__');
+    console.log(A.__proto__.__proto__);
+    console.log('B.__proto__');
+    console.log(B.__proto__);
+
+    console.log('测试prototype');
+    console.log('A.prototype');
+    console.log(A.prototype);
+		console.log('B.prototype');
+		console.log(B.prototype);
+
+		function Person () {
+		}
+		console.log(Person.prototype);
+		Person.prototype.name= "prototype_name";
+		Person.prototype.age = "15";
+		var person1 = new Person();
+    console.log('测试对象实例person');
+    console.log(person1.prototype);
+		console.log(person1.__proto__);
+
+		var num = Number();
+    console.log('测试数值实例num');
+    console.log('num.prototype');
+    console.log(num.prototype);
+    console.log('num.__proto__');
+    console.log(num.__proto__);
+    console.log(Number.__proto__);
+		console.log(Object.getPrototypeOf(num));
+    console.log('num.__proto__.__proto__');
+    console.log(num.__proto__.__proto__);
+		console.log(num.__proto__.__proto__ === Object.prototype);
+		console.log(Number instanceof Object);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

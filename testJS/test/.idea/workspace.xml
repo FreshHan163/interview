@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a6d3d054-6f22-400a-b04a-b04b3e4efacd" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Unnamed">
+      <favorite_root url="file://$PROJECT_DIR$/amap-echarts/echarts2-map.html" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="city-loc.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/city-loc.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="city-loc.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/js/city-loc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1675">
+              <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="amap-adjustStyle.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap/amap-adjustStyle.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10625">
+              <caret line="425" column="32" lean-forward="false" selection-start-line="425" selection-start-column="32" selection-end-line="425" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="amap-adjustCircle.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap/amap-adjustCircle.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="339" column="26" lean-forward="false" selection-start-line="339" selection-start-column="26" selection-end-line="339" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="js-gallery.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js-gallery.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="amap-cityloc-v1.0.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap/amap-cityloc-v1.0.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3650">
+              <caret line="146" column="47" lean-forward="false" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="amap-cityloc-v1.0.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap/js/amap-cityloc-v1.0.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5525">
+              <caret line="221" column="40" lean-forward="false" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="path.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/amap/json/path.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="106" lean-forward="false" selection-start-line="4" selection-start-column="106" selection-end-line="4" selection-end-column="106" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="package_json" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>崇文门</find>
+      <find>世贸天阶</find>
+      <find>initPath</find>
+      <find>setF</find>
+      <find>ro</find>
+      <find>create</find>
+      <find>zIndex</find>
+      <find>佛山</find>
+      <find>key=</find>
+      <find>lngLatToContainer</find>
+      <find>addToolbar</find>
+      <find>Mark</find>
+      <find>setFea</find>
+      <find>peop</find>
+      <find>createElement</find>
+      <find>canvas</find>
+      <find>console</find>
+      <find>getJson</find>
+      <find>create_list_row</find>
+      <find>length</find>
+      <find>pathLine</find>
+      <find>onRender</find>
+      <find>.list-row</find>
+      <find>setS</find>
+      <find>getJ</find>
+      <find>上海</find>
+      <find>setSpeed</find>
+      <find>LineS</find>
+      <find>Passed</find>
+      <find>createPathData</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>d[i]</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/public/js/showDetail.js" />
+        <option value="$PROJECT_DIR$/public/js/jsorder.js" />
+        <option value="$PROJECT_DIR$/public/datagrid/test.html" />
+        <option value="$PROJECT_DIR$/district.html" />
+        <option value="$PROJECT_DIR$/districthan.html" />
+        <option value="$PROJECT_DIR$/datagrid.html" />
+        <option value="$PROJECT_DIR$/threeselect.html" />
+        <option value="$PROJECT_DIR$/public/css/selectcss.css" />
+        <option value="$PROJECT_DIR$/selectDialog.html" />
+        <option value="$PROJECT_DIR$/amap-modify.html" />
+        <option value="$PROJECT_DIR$/amap-adjust.html" />
+        <option value="$PROJECT_DIR$/amap-position.html" />
+        <option value="$PROJECT_DIR$/amap/js/dll.5500ed.js" />
+        <option value="$PROJECT_DIR$/amap/js/main.39ff73.js" />
+        <option value="$PROJECT_DIR$/amap/wordcloud.html" />
+        <option value="$PROJECT_DIR$/chart-word/wordcloud.html" />
+        <option value="$PROJECT_DIR$/amap/amap-position.html" />
+        <option value="$PROJECT_DIR$/amap/js/dat.gui.min.js" />
+        <option value="$PROJECT_DIR$/amap/amap-seaPoint.html" />
+        <option value="$PROJECT_DIR$/amap/amap-PlaceSearch.html" />
+        <option value="$PROJECT_DIR$/amap/js/amap-city.js" />
+        <option value="$PROJECT_DIR$/amap/amap-city.html" />
+        <option value="$PROJECT_DIR$/amap/js/cityLocation.js" />
+        <option value="$PROJECT_DIR$/amap/json/path.txt" />
+        <option value="$PROJECT_DIR$/amap/amap-point.html" />
+        <option value="$PROJECT_DIR$/amap/amap-adjust.html" />
+        <option value="$PROJECT_DIR$/amap/amap-lineWidth.html" />
+        <option value="$PROJECT_DIR$/amap/json/package.json" />
+        <option value="$PROJECT_DIR$/bootstrap-tab.html" />
+        <option value="$PROJECT_DIR$/amap/amap-layer.html" />
+        <option value="$PROJECT_DIR$/amap/amap-cityloc-v1.0.html" />
+        <option value="$PROJECT_DIR$/creatTable.html" />
+        <option value="$PROJECT_DIR$/json-test.html" />
+        <option value="$PROJECT_DIR$/amap/js/amap-cityloc-v1.0.js" />
+        <option value="$PROJECT_DIR$/amap/amap-adjustCircle.html" />
+        <option value="$PROJECT_DIR$/amap/json/path.json" />
+        <option value="$PROJECT_DIR$/amap/amap-adjustStyle.html" />
+        <option value="$PROJECT_DIR$/amap/echarts-ma[.html" />
+        <option value="$PROJECT_DIR$/amap-echarts/js/bmap.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/echarts-map.html" />
+        <option value="$PROJECT_DIR$/amap-echarts/js/showdata.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/js-echarts2/example.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/echarts2-map.html" />
+        <option value="$PROJECT_DIR$/amap-echarts/example.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/js-echarts2/echarts.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/BMap/doc/example.html" />
+        <option value="$PROJECT_DIR$/amap-echarts/BMap/doc/example.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/BMap/js/example.js" />
+        <option value="$PROJECT_DIR$/amap-echarts/BMap/doc/city-loc.html" />
+        <option value="$PROJECT_DIR$/amap-echarts/BMap/js/city-loc.js" />
+        <option value="$PROJECT_DIR$/js-gallery.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\wamp\www\test\amap-echarts\BMap\doc" />
+      <recent name="E:\wamp\www\test\amap-echarts\js-echarts2" />
+      <recent name="E:\wamp\www\test\amap-echarts\js" />
+      <recent name="E:\wamp\www\test\amap\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\wamp\www\test\amap-echarts\BMap\js" />
+      <recent name="E:\wamp\www\test\amap-echarts" />
+      <recent name="E:\wamp\www\test\chart-word" />
+      <recent name="E:\wamp\www\test\amap" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6d3d054-6f22-400a-b04a-b04b3e4efacd" name="Default" comment="" />
+      <created>1504167197729</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504167197729</updated>
+      <workItem from="1504167199410" duration="1496000" />
+      <workItem from="1504505442968" duration="827000" />
+      <workItem from="1504509280086" duration="2852000" />
+      <workItem from="1504577205991" duration="4000" />
+      <workItem from="1504577477095" duration="3146000" />
+      <workItem from="1504668818008" duration="6752000" />
+      <workItem from="1504755306726" duration="732000" />
+      <workItem from="1504762643229" duration="6268000" />
+      <workItem from="1505093821253" duration="9388000" />
+      <workItem from="1505121050290" duration="1404000" />
+      <workItem from="1505182331459" duration="27000" />
+      <workItem from="1505183792114" duration="597000" />
+      <workItem from="1505353795758" duration="5071000" />
+      <workItem from="1505367092727" duration="11935000" />
+      <workItem from="1505699410702" duration="118000" />
+      <workItem from="1505699540146" duration="7947000" />
+      <workItem from="1505720409452" duration="650000" />
+      <workItem from="1505722439517" duration="5205000" />
+      <workItem from="1505784697152" duration="19870000" />
+      <workItem from="1505871982262" duration="18704000" />
+      <workItem from="1505896844830" duration="3201000" />
+      <workItem from="1506389051882" duration="412000" />
+      <workItem from="1506389474632" duration="8142000" />
+      <workItem from="1506404403908" duration="311000" />
+      <workItem from="1506405194328" duration="14864000" />
+      <workItem from="1506476063818" duration="20792000" />
+      <workItem from="1506562624520" duration="13565000" />
+      <workItem from="1506581560098" duration="10278000" />
+      <workItem from="1507513415087" duration="1731000" />
+      <workItem from="1507515244391" duration="6957000" />
+      <workItem from="1507527827482" duration="1169000" />
+      <workItem from="1507531269991" duration="6786000" />
+      <workItem from="1507599241394" duration="20994000" />
+      <workItem from="1508119544693" duration="4888000" />
+      <workItem from="1508124627519" duration="3179000" />
+      <workItem from="1520207566768" duration="1852000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="222114000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/css/selectcss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="70" column="32" lean-forward="true" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectDialog.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2860">
+          <caret line="130" column="62" lean-forward="false" selection-start-line="130" selection-start-column="62" selection-end-line="130" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chart-word/wordcloud.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="181" column="30" lean-forward="true" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/js/dat.gui.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="13182" lean-forward="false" selection-start-line="1" selection-start-column="13182" selection-end-line="1" selection-end-column="13182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/js/cityLocation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="70" column="3" lean-forward="false" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-position.html" />
+    <entry file="file://$PROJECT_DIR$/amap/json/path.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="71" lean-forward="true" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-seaPoint.html" />
+    <entry file="file://$PROJECT_DIR$/amap/amap-modify.html" />
+    <entry file="file://$PROJECT_DIR$/amap/amap-expandpath.html" />
+    <entry file="file://$PROJECT_DIR$/amap/amap-lineWidth.html" />
+    <entry file="file://$PROJECT_DIR$/amap/json/path_circle.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="109" lean-forward="false" selection-start-line="9" selection-start-column="109" selection-end-line="9" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bootstrap-tab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="111" column="29" lean-forward="false" selection-start-line="111" selection-start-column="29" selection-end-line="111" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-PlaceSearch.html" />
+    <entry file="file://$PROJECT_DIR$/amap/js/amap-city.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="70" column="21" lean-forward="false" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/no-responsive.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/js-gallery/js-1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/json-test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-layer.html" />
+    <entry file="file://$PROJECT_DIR$/amap/amap-city.html" />
+    <entry file="file://$PROJECT_DIR$/amap/amap-adjust.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8712">
+          <caret line="396" column="41" lean-forward="false" selection-start-line="396" selection-start-column="41" selection-end-line="396" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/creatTable.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="133" column="36" lean-forward="false" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5522">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js/showdata.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/main.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/example.html" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/example.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js-echarts2/echarts.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js-echarts2/jquery.min.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js-echarts2/main.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js-echarts2/map.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/echarts2-map.html" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/jquery.min.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/echarts.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/BMap.html" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/doc.html" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7729">
+          <caret line="17" column="48" lean-forward="true" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/js/bmap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/echarts3_map_demo-master/index.html" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/echarts3_map_demo-master/test.js" />
+    <entry file="file://$PROJECT_DIR$/amap-echarts/echarts-map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="135" column="33" lean-forward="true" selection-start-line="135" selection-start-column="33" selection-end-line="135" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/example.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/js/example.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="366" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="719" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/doc/city-loc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap-echarts/BMap/js/city-loc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1675">
+          <caret line="67" column="45" lean-forward="false" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/json/path.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="106" lean-forward="false" selection-start-line="4" selection-start-column="106" selection-end-line="4" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/js/amap-cityloc-v1.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5525">
+          <caret line="221" column="40" lean-forward="false" selection-start-line="221" selection-start-column="40" selection-end-line="221" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-cityloc-v1.0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3650">
+          <caret line="146" column="47" lean-forward="false" selection-start-line="146" selection-start-column="47" selection-end-line="146" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-adjustStyle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10625">
+          <caret line="425" column="32" lean-forward="false" selection-start-line="425" selection-start-column="32" selection-end-line="425" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/amap/amap-adjustCircle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="339" column="26" lean-forward="false" selection-start-line="339" selection-start-column="26" selection-end-line="339" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-gallery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS+HTML+JS实现弹出框</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class='demo'>
+	<button id="button" onclick="openDialog()">打开弹窗</button>
+	<div class='demo-bg'></div>
+	<div class='demo-txt'>
+		<button id="btn" onclick="closeDialog()">关闭弹窗</button>
+	</div>
+</div>
+<script>
+  var demobg = document.querySelector(".demo-bg");
+  var demotxt = document.querySelector(".demo-txt");
+  function openDialog() {
+    demotxt.style.display = "block";
+    demobg.style.display = "block";
+  }
+
+  function closeDialog() {
+    demotxt.style.display = "none";
+    demobg.style.display = "none";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>position初步</title>
+	<style type="text/css">
+		/* absolute会使float失效 */
+		/*.div1 {*/
+			/*position: absolute;*/
+			/*float: left;*/
+			/*background-color: red;*/
+			/*width:250px;*/
+			/*height:100px;*/
+		/*}*/
+		/*.div2 {*/
+			/*position: absolute;*/
+			/*float: right;*/
+			/*background-color: blue;*/
+			/*width:200px;*/
+			/*height:150px;*/
+		/*}*/
+		/* 或下面的情况，absolute完全脱离了文档流 */
+		/*.div1 {*/
+			/*position: relative;*/
+			/*float: left;*/
+			/*background-color: red;*/
+			/*width:250px;*/
+			/*height:100px;*/
+		/*}*/
+		/*.div2 {*/
+			/*position: absolute;*/
+			/*float: right;*/
+			/*background-color: blue;*/
+			/*width:200px;*/
+			/*height:150px;*/
+		/*}*/
+		/* relative + float 不影响*/
+		/*.div1 {*/
+			/*position: relative;*/
+			/*float: left;*/
+			/*background-color: red;*/
+			/*width:250px;*/
+			/*height:100px;*/
+		/*}*/
+		/*.div2 {*/
+			/*position: relative;*/
+			/*float: right;*/
+			/*background-color: blue;*/
+			/*width:200px;*/
+			/*height:150px;*/
+		/*}*/
+		/* 测试float的影响 */
+		.testFloat {
+			width: 700px;
+			height: 300px;
+			background-color: #5bc0de;
+		}
+		.floatPosLeft {
+			float: left;
+			width: 200px;
+			background-color: #008CFF;
+		}
+		.floatPosRight {
+			float: right;
+			width: 200px;
+			background-color: #008CFF;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<!-- 测试float对文档的影响 -->
+	<div class="testFloat">
+		<div class="floatPosLeft">float: left;</div>
+		<div class="floatPosRight">float: right;</div>
+		<div class="floatPosMid">
+			<p>若是该行放在中间一行，机会影响float:right的显示。</p>
+			<p>因为float是部分脱离文档流，下面的div不受float框的影响。</p>
+			<p>但是下面的文字部分会受float影响，所以可以用float生成环绕文本的样式。</p>
+			<p>脱离标准后的浮动元素漂浮在正常块元素上面，但依然占据文档流的<b>文本空间</b>，所以有文本环绕效果。</p>
+		</div>
+	</div>
+</body>
+</html>

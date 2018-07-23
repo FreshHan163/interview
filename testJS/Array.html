@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组测试和用法</title>
+    <style type="text/css">
+        body {
+            background-color: #eeeeee;
+        }
+        ul li{
+            counter-increment: number;
+            list-style-type: none;
+        }
+        ul li::before {
+            content: counter(number)".";
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>吃饭</li>
+        <li>吃饭</li>
+        <li>吃饭</li>
+        <li>吃饭</li>
+    </ul>
+    <script>
+        window.onload = function () {
+            var test1 = 'C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Java\jdk1.8.0_121\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;C:\Program Files\nodejs\;D:\Git\cmd;C:\Program Files\TortoiseSVN\bin;C:\Program Files\MySQL\MySQL Utilities 1.6';
+            var testArray = test1.split(';');
+            for (var item in testArray) {
+                console.log(item + ': ' + testArray[item]);
+            }
+        }
+        var person = {
+            name: "Jane",
+            age: 29
+        }
+        var personJson = {"name":"Jane","age":29}
+        var bookList = {
+            "title": "Professional Ajax",
+            "year": 2009,
+            "authors": [
+                "Jane", "Maria", "Anna"
+            ],
+            "edition": "2.0",
+            toJSON: function () {
+                return this.title;
+            }
+        };
+        var bookList2 = {
+            "title": "Professional Ajax",
+            "year": 2009,
+            "edition": "2.0",
+            "releaseDate": new Date(2011, 6, 5)
+        };
+        console.log('bookList2:' + JSON.stringify(bookList2, null, 4));
+        var jsonText2 = JSON.stringify(bookList2);
+        var book2 = JSON.parse(jsonText2);
+        console.log(book2.releaseDate);
+        var book = JSON.parse(jsonText2, function (key, value) {
+            if (key == "releaseDate") {
+                return new Date(value);
+            } else {
+                return value;
+            }
+        })
+        console.log(book.releaseDate.getFullYear());
+        console.log(book.releaseDate);
+
+        var jsonText = JSON.stringify(person);
+        console.log(typeof jsonText);
+        console.log('bookList:' + JSON.stringify(bookList));
+        console.log(typeof personJson);
+        console.log(bookList.edition);
+        var jsObject = JSON.parse(jsonText);
+        console.log("jsObject:" + typeof jsObject);	//输出object
+        console.log(JSON.stringify(bookList, ["title", "edition"]));
+        var jsonFilter = JSON.stringify(bookList, function(key, value) {
+            switch(key) {
+                case 'authors':
+                    return value.join(",");
+                case 'year':
+                    return 5000;
+                case 'edition':
+                    return undefined;
+                default:
+                    return value;
+            }
+        })
+        console.log(jsonFilter);
+        console.log(JSON.stringify(bookList, null, 4));
+        console.log(JSON.stringify(bookList, null, '---'));
+    </script>
+</body>
+</html>

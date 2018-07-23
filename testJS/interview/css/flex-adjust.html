@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex布局--常见问题及解决办法</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		html, body {
+			height: 100%;
+		}
+		body {
+			display: flex;
+			min-height: 100vh;
+			background-color: #c4e3f3;
+			flex-direction: column;
+		}
+		p {
+			margin: 3px auto;
+		}
+		/* 第一个问题: flex-basis值的影响，以及如何修改flex布局内容溢出的部分 */
+		.first {
+			height: 100px;
+			display: flex;
+			width: 1000px;
+		}
+		.item-1 {
+			flex: 1 1 auto;			/* 宽度要确定 */
+			width: 100px;
+			background-color: #5bc0de;
+			overflow: hidden;		/* 添加以下3行 */
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		.item-2 {
+			flex: 1 1 auto;
+			width: 300px;
+			/*flex-wrap: wrap;*/
+			background-color: #e4b9b9;
+		}
+		.item-3 {
+			flex: 1 1 600px;
+			background-color: #67b168;
+		}
+	</style>
+</head>
+<body>
+	<div class="first">
+		<div class="item-1">父宽度为1000px;</div>
+		<div class="item-2">
+			<p>flex: 1 1 0%; 此时flex-basis为0，即便设置了width也不起作用</p>
+		</div>
+		<div class="item-3">
+			<p>flex: 1 1 auto; 此时flex-basis为auto，主轴宽度根据width确定，如果没有width，则根据content确定</p>
+		</div>
+	</div>
+</body>
+</html>

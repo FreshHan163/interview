@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- 展示区域-->
+<div id="wordchart" style="width: 800px;height: 800px; margin: 30px 150px; border: 1px solid black">
+
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.js"></script>
+<script src="js/echarts-wordcloud.min.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('wordchart'));
+    // alert(maskimage.src);
+    //准备数据
+    option = {
+        backgroundColor: '#fff',
+        title: {
+            text: '',
+            link: 'https://www.baidu.com/s?wd=' + encodeURIComponent('ECharts'),
+            textStyle: {
+                fontSize: 23,
+                color: 'white'
+            },
+            subtext: '',
+            subtextStyle: {
+                color: '#eee'
+            },
+            left: 'left'
+        },
+        tooltip: {
+            show: true
+        },
+        toolbox: {
+            show: true,
+            orient: 'vertical',
+            left: 'right',
+            top: 'center',
+            iconStyle: {
+                normal: {
+                    borderColor: 'red',
+                    color: 'none'
+                },
+                emphasis: {
+                    borderColor: 'pink'
+                }
+            },
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        series: [{
+            name: '热点分析',
+            type: 'wordCloud',
+            shape: 'circle',            //修改图形类型，
+            sizeRange: [18,60],         //修改字体尺寸
+            gridSize: 4,
+            rotationRange: [90,0],       //修改字体旋转角度，-45度，90度
+            rotationStep: 90,
+            left:'center',
+            top:'center',
+            width: '90%',
+            height: '80%',
+            autoSize: {
+                enable: true,
+                minSize: 6
+            },
+            textStyle: {
+                normal: {
+                    color: function() {
+                        return 'rgb(' + [
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160),
+                                Math.round(Math.random() * 160)
+                            ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            }
+        }]
+    };
+
+    var JosnList = [];     //数据
+    JosnList.push(
+        {name:'零度',value:43.28824},
+        {name:'雪碧',value:39.60475},
+        {name:'红牛',value:32.09201},
+        {name:'加多宝',value:25.78075},
+        {name:'乳酸饮料',value:16.53552},
+        {name:'蒙牛',value:15.25094},
+        {name:'统一',value:14.94078},
+        {name:'星巴克',value:97.32505},
+    {name:'伊利',value:10.35898},
+    {name:'王老吉',value:9.18754},
+    {name:'猫屎咖啡',value:9.14741},
+    {name:'露露',value:8.68446},
+    {name:'康师傅',value:8.13249},
+    {name:'咖啡冰淇淋',value:6.48721},
+    {name:'雪顶咖啡',value:5.04431},
+    {name:'贝因美奶粉',value:5.0435},
+    {name:'雀巢咖啡',value:4.99686},
+    {name:'蜂蜜柚子茶',value:3.59847},
+    {name:'农夫山泉',value:2.88235},
+    {name:'香蕉酸奶',value:2.84188},
+    {name:'百事可乐',value:2.83955},
+    {name:'可口可乐',value:64.87698,itemStyle:{
+            normal:{
+                top: 600,
+                rotationRange:[0,0],
+                left: 'left'
+            }
+        }},
+
+        {name:'活力',value:2.31603},
+    {name:'香飘飘',value:2.26922},
+    {name:'太平洋咖啡',value:1.80063},
+    {name:'脉动',value:1.65582},
+    {name:'酸梅汤',value:1.5897},
+    {name:'凉茶',value:1.2419},
+    {name:'茉莉花茶',value:1.23836},
+    {name:'黑咖啡',value:1.18197},
+    {name:'代餐粉',value:1.12174},
+    {name:'港式奶茶',value:1.08364},
+    {name:'七喜',value:1.03899},
+    {name:'冻酸奶',value:0.99875},
+    {name:'芬达',value:0.92613},
+    {name:'冰咖啡',value:0.92051},
+    {name:'桂花酸梅汤',value:0.83985},
+    {name:'速溶咖啡',value:0.8282},
+    {name:'草莓酸奶',value:0.80309},
+    {name:'三元',value:0.74249},
+    {name:'减肥咖啡',value:0.66574},
+    {name:'魔爪',value:0.63671},
+    {name:'水果冰激凌',value:0.62477},
+    {name:'玫瑰花茶',value:0.61928},
+    {name:'乳酸菌',value:0.60352},
+    {name:'酸奶水果捞',value:0.56486},
+    {name:'星冰乐',value:0.51286},
+    {name:'美式咖啡',value:0.50984},
+    {name:'蔬菜汁',value:0.49475},
+    {name:'拿铁',value:0.49128},
+    {name:'黑芝麻糊',value:0.48846},
+    {name:'六个核桃',value:0.48672},
+    {name:'彩虹饮料',value:0.42898},
+    {name:'孕妇奶粉',value:0.42466},
+    {name:'优乐美',value:0.36417},
+    {name:'冰红茶',value:0.35712},
+    {name:'羊奶粉',value:0.34959},
+    {name:'酵素',value:0.34649},
+    {name:'酸奶冰淇淋',value:0.33019},
+    {name:'丝袜奶茶',value:0.31597},
+    {name:'果粒橙',value:0.30305},
+    {name:'蔬果汁',value:0.29044},
+    {name:'脱脂奶粉',value:0.27943},
+    {name:'椰汁西米露',value:0.27716},
+    {name:'美年达',value:0.26835},
+    {name:'摩卡',value:0.24907},
+    {name:'东鹏特饮',value:0.22754},
+    {name:'汇源',value:0.21312},
+    {name:'椰子汁',value:0.21125},
+    {name:'酸奶慕斯',value:0.21072},
+    {name:'焦糖奶茶',value:0.20452},
+    {name:'麦咖啡',value:0.19878},
+    {name:'养乐多',value:0.17674},
+    {name:'芒果酸奶',value:0.15918},
+    {name:'谷粒多',value:0.1227},
+    {name:'雀巢能恩',value:0.11629},
+    {name:'阿萨姆奶茶',value:0.11537},
+    {name:'合生元奶粉',value:0.10377},
+    {name:'美赞臣奶粉',value:0.10185},
+    {name:'卡士',value:0.10111},
+    {name:'明治奶粉',value:0.09962},
+    {name:'三鹿',value:0.09883},
+    {name:'安佳',value:0.08917},
+    {name:'美素奶粉',value:0.08473},
+    {name:'君乐宝',value:0.07849},
+    {name:'上岛咖啡',value:0.06864},
+    {name:'养元',value:0.06353},
+    {name:'多美滋',value:0.03232}
+
+
+    );
+    option.series[0].data = JosnList;
+
+    // 使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+</script>
+</body>
+</html>

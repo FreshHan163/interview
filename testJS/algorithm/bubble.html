@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡排序算法</title>
+</head>
+<body>
+	<script>
+		var bubble = [2, 32, 33, 10, 1, 48];
+		function bubbleSort(array) {
+			var len = array.length;
+			for ( var i=0; i < len; i++) {
+        var flag = false;
+			  for (var j=len-1; j > i; --j) {
+          if (array[j-1] > array[j]) {
+			      var temp = array[j-1];
+			      array[j-1] = array[j];
+			      array[j] = temp;
+			      flag = true;
+					}
+				}
+				if (flag == false) {
+			    console.log("从小到大排列");
+			    return array;
+				}
+			}
+    }
+    function bubbleReverse(array) {
+      var len = array.length;
+      for ( var i=0; i < len; i++) {
+        var flag = false;
+        for (var j=len-1; j > i; --j) {
+          if (array[j-1] < array[j]) {
+            var temp = array[j-1];
+            array[j-1] = array[j];
+            array[j] = temp;
+            flag = true;
+          }
+        }
+        if (flag == false) {
+          console.log("从大到小排列");
+          return array;
+        }
+      }
+    }
+    function bubbleDouble(array) {
+//		  console.log(i);
+      console.log("测试JS作用域");
+      console.log(array);
+			var len = array.length;
+			var low = 0;
+			var high = len - 1;
+			var flag = true;
+
+			while (low < high && flag) {
+			  flag = false;
+			  //第一次排序最大值放右边
+			  for (var i=low; i<high; i++) {
+          if(array[i] > array[i+1]) {
+            var temp = array[i];
+            array[i] = array[i+1];
+            array[i+1] = temp;
+            flag = true;
+          }
+				}
+				high--;
+			  //第二次排序最小值放左边
+				for (var j=high; j>low; j--) {
+          if(array[j-1] > array[j]) {
+            var rep = array[j];
+            array[j] = array[j-1];
+            array[j-1] = rep;
+            flag = true;
+          }
+        }
+				low++;
+			}
+      console.log("双向冒泡排序：从小到大排列：");
+    }
+    console.log(bubble);
+    bubbleSort(bubble);
+    console.log(bubble);
+    bubbleReverse(bubble);
+		console.log(bubble);
+    bubbleDouble(bubble);
+    console.log(bubble);
+	</script>
+</body>
+</html>

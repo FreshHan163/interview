@@ -1,0 +1,66 @@
+/**
+  * @name       :normalize
+  * @author     :cathy
+  * @version    :v1.0
+  * @type       :重置类
+  * @explain    :实现浏览器兼容性
+  * @dependent  :none
+ */
+/* 整体框架 */
+html,
+body{
+    margin: 0;
+    padding: 0;
+}
+header,
+footer,
+nav,
+section,
+article{
+    display: block;     //修正IE中未定义的html5块状元素
+}
+p{                      //修正IE和FF的margin属性
+    margin-top: 0;
+    margin-bottom: 0;
+}
+a{
+    background-color: transparent;
+    text-decoration: none;
+    color: lightblue;
+}
+a:hover,
+a:active{
+    outline: 0;
+    text-decoration: none;
+    color: cornflowerblue;
+}
+img{
+    border: 0;
+}
+button,
+input,
+select,
+textarea{
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+button{
+    overflow: visible;
+}
+button,
+select{
+    text-transform: none;       //定义文本大小写属性
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"]{
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+button[disabled],
+html input[disabled]{
+
+}
+/* @end **/

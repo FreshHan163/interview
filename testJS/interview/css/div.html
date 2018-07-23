@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>div居中的多种方法</title>
+
+    <style>
+        body {
+            background-color: #f06d06;
+        }
+        /* text-align: center; 默认水平居中，对inline,inline-block, inline-table, inline-flex都有用 */
+        /* 对于块级元素，在父元素宽高不确定时，水平居中，margin: 0 auto; 一定要设置width,否则默认100%，就用不着居中了 */
+        header {
+            margin: 20px 10px;
+            height: 200px;
+            line-height: 200px;
+            background-color: white;
+        }
+        .center {
+            width: 400px;
+            margin: 0 auto;     /* 水平居中 */
+            text-align: center;
+            vertical-align: middle;
+            /*line-height: 200px;*/
+            padding: 20px;
+            background: black;
+            color: white;
+        }
+        /* display:inline-block元素，多个元素块居中,可以用text-align:center */
+        main {
+            margin: 10px;
+            background: white;
+            padding: 15px 20px;
+        }
+        .inline-block-center {
+            text-align: center;
+        }
+        .inline-block-center div {
+            /*display: inline-block;*/
+            margin: 15px auto;
+            background: black;
+            color: white;
+            padding: 10px 15px;
+            /*margin: 10px 15px;*/
+            max-width: 200px;
+            text-align: left;
+        }
+        /* 多行inline-block或inline,padding不起作用的话，table-cell的情况下，vertical-align可以 */
+        .center-table {
+            display: table;
+            margin: 0 auto;
+            height: 100px;
+            width: 440px;
+            padding: 10px;
+            background: white;
+            /*margin: 10px;*/
+        }
+        .center-table p {
+            /*display: table-cell;*/
+            background: black;
+            color: white;
+            /*padding: 20px;*/
+            margin: 0;
+            line-height: 100px;
+            white-space: nowrap;
+            /*vertical-align: middle;*/
+        }
+        /* 伪元素设置文本垂直居中 */
+        .ghost-center {
+            position: relative;
+            background: white;
+            width: 500px;
+            height: 100px;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .ghost-center::before {
+            content: "";
+            height: 100%;
+            width: 1%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .ghost-center p {
+            display: inline-block;
+            vertical-align: middle;
+            background: black;
+            color: white;
+            width: 200px;
+            margin: 0;
+        }
+        /* 块级元素 */
+        /* tansform: translateY(-50%) 实现垂直居中，不确定高度时*/
+        .parent {
+            position: relative;
+            background: white;
+            width: 500px;
+            height: 100px;
+            resize: vertical;
+            margin: 0 auto;
+        }
+        .child {
+            position: absolute;
+            background: black;
+            top: 50%;
+            /*left: 50%;*/
+            /*transform: translate(-50%, -50%);*/
+            left: 20px;
+            right: 20px;
+            transform: translateY(-50%);
+            color: white;
+            padding:15px;
+            resize:vertical;
+            overflow: auto;
+        }
+
+        /* 使用flex布局 */
+        .parent-flex {
+            background: white;
+            height: 200px;
+            /*width: 200px;*/
+            padding: 20px;
+            margin: 20px;
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+        }
+        .child-flex {
+            background: black;
+            padding: 20px;
+            color: white;
+        }
+        /* 对于块级元素，横竖都居中 */
+        /* 确定元素高宽时，采用position*/
+        /* 不确定元素高宽时，采用transform: translate(-50%,-50%)*/
+        /* flexbox属性中，用到justify-content, align-items:center */
+
+        /*  不确定宽高的div 垂直居中 */
+        .center-middle {
+            background: wheat;
+            width: 80%;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .parent1 {
+            position: relative;
+            background: white;
+            width: 100%;
+            height: 100px;
+        }
+        .child1 {
+            position: absolute;
+            background: black;
+            top: 50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        .parent2 {
+            position: relative;
+            background: white;
+            width: 100%;
+            height: 100px;
+            margin: 20px 0;
+        }
+        .child2 {
+            position: absolute;
+            background: black;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            color: white;
+            margin: auto;
+            text-align: center;
+        }
+        .parent3 {
+            display: table;
+            background: white;
+            width: 800px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        .child3 {
+            background: black;
+            color: white;
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="center"> This is a block level element.</div>
+    </header>
+    <main class="inline-block-center">
+        <div>This is First inline-block;</div>
+        <div>Max-width = 200px;</div>
+        <div>Just use inline-block;&& also use text-align: center;</div>
+    </main>
+    <div class="center-table">
+        <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
+    </div>
+    <div class="ghost-center">
+        <p>I'm vertically centered multiple lines of text in a CSS-created table layout.</p>
+    </div>
+    <div class="parent">
+        <div class="child">的点点滴滴的点点滴滴的点点滴滴的点点滴滴I'm vertically centered multiple lines of text in a CSS-created table layout.</div>
+    </div>
+    <div class="parent-flex">
+        <div class="child-flex">的点点滴滴的点点滴滴的点点滴滴的点点滴滴I'm vertically centered multiple lines of text in a CSS-created table layout.</div>
+    </div>
+    <!-- 测试不确定宽高的div垂直居中 -->
+    <div class="center-middle">
+        <div class="parent1">
+            <div class="child1">
+                父元素确定宽高，子元素不确定宽高时，采用positon: relative和absolute,利用translate(-50%, -50)定位垂直居中；
+                不兼容不支持transform的浏览器；
+            </div>
+        </div>
+        <div class="parent2">
+            <div class="child2">
+                采用positon: relative和absolute,利用TRUF:0，margin: auto定位垂直居中；
+            </div>
+        </div>
+        <div class="parent3">
+            <div class="child3">
+                采用display: table-cell; 利用inline-*元素，可以用text-align: center;居中
+            </div>
+        </div>
+    </div>
+</body>
+</html>
